@@ -11,14 +11,9 @@ public class Odleglosc {
         p2.y=6;
 
         double odl;
-        odl = distance(p1,p2);
+        odl = p1.distance(p2);
 
         System.out.println("dlugosc"+ " " + odl);
     }
-    public static double distance(Point p1, Point p2) {
-        double odl;
-        odl = Math.sqrt((p1.x - p2.x)*(p1.x - p2.x)+(p1.y - p2.y)*(p1.y - p2.y));
 
-        return odl;
-    }
 }
