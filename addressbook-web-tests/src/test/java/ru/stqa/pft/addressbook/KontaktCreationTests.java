@@ -40,13 +40,13 @@ public class KontaktCreationTests {
     public void testKontaktCreation() {
 
         initGroupCreation();
-        fillGroupForm();
+        fillGroupForm(new GroupKontakt("Monika"));
     }
 
-    private void fillGroupForm() {
+    private void fillGroupForm(GroupKontakt groupKontakt) {
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
-        wd.findElement(By.name("firstname")).sendKeys("Monika");
+        wd.findElement(By.name("firstname")).sendKeys(groupKontakt.getFirstname());
         wd.findElement(By.name("middlename")).click();
         wd.findElement(By.name("lastname")).click();
         wd.findElement(By.name("lastname")).clear();
