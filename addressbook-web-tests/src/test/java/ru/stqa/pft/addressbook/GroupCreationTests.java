@@ -40,7 +40,7 @@ public class GroupCreationTests {
         fillGroupForm();
         submitGroupCreation();
         returntoGroupPage();
-        
+
     }
 
     private void returntoGroupPage() {

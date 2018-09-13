@@ -18,6 +18,11 @@ public class KontaktCreationTests {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox ESR/firefox.exe"));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/group.php");
+        Login();
+
+    }
+
+    private void Login() {
         wd.findElement(By.name("pass")).click();
         wd.findElement(By.name("pass")).sendKeys("\\undefined");
         wd.findElement(By.cssSelector("html")).click();
@@ -29,13 +34,16 @@ public class KontaktCreationTests {
         wd.findElement(By.name("pass")).clear();
         wd.findElement(By.name("pass")).sendKeys("secret");
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
-
     }
-    
+
     @Test
     public void testKontaktCreation() {
 
-        wd.findElement(By.linkText("add new")).click();
+        initGroupCreation();
+        fillGroupForm();
+    }
+
+    private void fillGroupForm() {
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
         wd.findElement(By.name("firstname")).sendKeys("Monika");
@@ -65,22 +73,16 @@ public class KontaktCreationTests {
         wd.findElement(By.name("nickname")).click();
         wd.findElement(By.name("nickname")).clear();
         wd.findElement(By.name("nickname")).sendKeys("Sowka");
-        if (!wd.findElement(By.xpath("//div[@id='content']/form/select[1]//option[21]")).isSelected()) {
-            wd.findElement(By.xpath("//div[@id='content']/form/select[1]//option[21]")).click();
-        }
-        if (!wd.findElement(By.xpath("//div[@id='content']/form/select[2]//option[6]")).isSelected()) {
-            wd.findElement(By.xpath("//div[@id='content']/form/select[2]//option[6]")).click();
-        }
         wd.findElement(By.name("byear")).click();
         wd.findElement(By.name("byear")).clear();
         wd.findElement(By.name("byear")).sendKeys("1988");
         wd.findElement(By.name("theform")).click();
-        if (!wd.findElement(By.xpath("//div[@id='content']/form/select[5]//option[2]")).isSelected()) {
-            wd.findElement(By.xpath("//div[@id='content']/form/select[5]//option[2]")).click();
-        }
-        wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
     }
-    
+
+    private void initGroupCreation() {
+        wd.findElement(By.linkText("add new")).click();
+    }
+
     @AfterMethod
     public void tearDown() {
         wd.quit();
