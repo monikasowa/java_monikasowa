@@ -9,10 +9,10 @@ public class GroupDeleteTests extends TestBase {
     @Test
     public void testGroupDelete() {
 
-        wd.findElement(By.linkText("groups")).click();
-        selectGroup();
-        deleteSelectedGroups();
-        returntoGroupPage();
+        app.wd.findElement(By.linkText("groups")).click();
+        app.selectGroup();
+        app.deleteSelectedGroups();
+        app.returntoGroupPage();
     }
 
 }
