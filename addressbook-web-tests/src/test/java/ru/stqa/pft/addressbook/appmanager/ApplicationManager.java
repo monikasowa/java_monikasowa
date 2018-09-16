@@ -10,7 +10,10 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
     FirefoxDriver wd;
 
+
+    private SessionHelper sessionHelper;
     private GroupsHelper groupsHelper;
+    public KontaktHelper kontaktHelper;
 
     public static boolean isAlertPresent(FirefoxDriver wd) {
         try {
@@ -24,25 +27,11 @@ public class ApplicationManager {
     public void init() {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox ESR/firefox.exe"));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-        wd.get("http://localhost/addressbook/group.php");
+        wd.get("http://localhost/addressbook/edit.php");
         groupsHelper = new GroupsHelper(wd);
-        Login();
-    }
-
-    public void Login() {
-        Login("admin", "secret");
-    }
-
-    public void Login(String username, String password) {
-       wd.findElement(By.name("pass")).click();
-        wd.findElement(By.name("pass")).sendKeys("\\undefined");
-        wd.findElement(By.name("user")).click();
-        wd.findElement(By.name("user")).clear();
-        wd.findElement(By.name("user")).sendKeys(username);
-        wd.findElement(By.name("pass")).click();
-        wd.findElement(By.name("pass")).clear();
-        wd.findElement(By.name("pass")).sendKeys(password);
-        wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+        kontaktHelper = new KontaktHelper(wd);
+        sessionHelper = new SessionHelper (wd);
+        sessionHelper.Login("admin", "secret");
     }
 
     public void stop() {
@@ -52,4 +41,6 @@ public class ApplicationManager {
     public GroupsHelper getGroupsHelper() {
         return groupsHelper;
     }
+
+
 }
