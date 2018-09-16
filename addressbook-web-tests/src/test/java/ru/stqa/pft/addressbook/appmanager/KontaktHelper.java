@@ -4,11 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.KontaktData;
 
-public class KontaktHelper {
-    private final FirefoxDriver wd;
+public class KontaktHelper extends BaseHelper{
 
     public KontaktHelper(FirefoxDriver wd) {
-        this.wd = wd;
+        super(wd);
     }
 
     public void DelateKontakt() {
@@ -23,35 +22,18 @@ public class KontaktHelper {
         wd.findElement(By.linkText("add new")).click();
     }
     public void FillGroupForm(KontaktData groupKontakt) {
-        wd.findElement(By.name("firstname")).click();
-        wd.findElement(By.name("firstname")).clear();
-        wd.findElement(By.name("firstname")).sendKeys(groupKontakt.getFirstname());
+        type(By.name("firstname"), groupKontakt.getFirstname());
         wd.findElement(By.name("middlename")).click();
-        wd.findElement(By.name("lastname")).click();
-        wd.findElement(By.name("lastname")).clear();
-        wd.findElement(By.name("lastname")).sendKeys("Sowa");
-        wd.findElement(By.name("company")).click();
-        wd.findElement(By.name("company")).clear();
-        wd.findElement(By.name("company")).sendKeys("Polska");
-        wd.findElement(By.name("address")).click();
-        wd.findElement(By.name("address")).clear();
-        wd.findElement(By.name("address")).sendKeys("Uczniowska 24");
-        wd.findElement(By.name("email")).click();
-        wd.findElement(By.name("email")).clear();
-        wd.findElement(By.name("email")).sendKeys("monika.sowa.21cn@gmail.com");
-        wd.findElement(By.name("home")).click();
-        wd.findElement(By.name("home")).clear();
-        wd.findElement(By.name("home")).sendKeys("324221745");
-        wd.findElement(By.name("middlename")).click();
-        wd.findElement(By.name("middlename")).clear();
-        wd.findElement(By.name("middlename")).sendKeys("MS");
-        wd.findElement(By.name("nickname")).click();
-        wd.findElement(By.name("nickname")).clear();
-        wd.findElement(By.name("nickname")).sendKeys("Sowka");
-        wd.findElement(By.name("byear")).click();
-        wd.findElement(By.name("byear")).clear();
-        wd.findElement(By.name("byear")).sendKeys("1988");
+        type(By.name("lastname"), "Sowa");
+        type(By.name("company"), "Polska");
+        type(By.name("address"), "Uczniowska 24");
+        type(By.name("email"), "monika.sowa.21cn@gmail.com");
+        type(By.name("home"), "324221745");
+        type(By.name("middlename"), "MS");
+        type(By.name("nickname"), "Sowka");
+        type(By.name("byear"), "1988");
         wd.findElement(By.name("theform")).click();
     }
+
 }
 
