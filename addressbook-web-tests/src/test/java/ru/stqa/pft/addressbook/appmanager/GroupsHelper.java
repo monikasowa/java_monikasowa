@@ -34,15 +34,23 @@ public class GroupsHelper extends BaseHelper {
         wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
     }
 
-    public void initGroupCreation() {
-        click(By.name("new"));
+    public void initGroupCreation() { click(By.name("new"));
     }
 
-    public void deleteSelectedGroups() {
-        click(By.name("delete"));
+    public void deleteSelectedGroups() { click(By.name("delete"));
     }
 
-    public void selectGroup() {
-        click(By.name("selected[]"));
+    public void selectGroup() { click(By.name("selected[]"));
+    }
+
+    public void initGroupModification()
+    {
+
+        click(By.name("edit"));
+    }
+
+    public void submitGroupModification()
+    {
+        click(By.name("update"));
     }
 }

@@ -5,18 +5,18 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseHelper {
-    protected final FirefoxDriver wd;
-    public FirefoxDriver wd;
+    public final FirefoxDriver wd;
+
 
     public BaseHelper(FirefoxDriver wd) {
         this.wd = wd;
     }
 
-    protected void click(By locator) {
+    public void click(By locator) {
         wd.findElement(locator).click();
     }
 
-    protected void type(By locator, String text) {
+   public void type(By locator, String text) {
         wd.findElement(locator).click();
         wd.findElement(locator).clear();
         wd.findElement(locator).sendKeys(text);
