@@ -16,7 +16,7 @@ public class SessionHelper extends BaseHelper{
         type((By.name("user")),(username));
         type((By.name("pass")),(password));
         wd.findElement(By.name("pass")).click();
-        wd.findElement(By.name("pass")).sendKeys("\\undefined");
+       // wd.findElement(By.name("pass")).sendKeys("\\undefined");
 
         click(By.xpath("//form[@id='LoginForm']/input[3]"));
     }

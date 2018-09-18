@@ -11,7 +11,7 @@ public class ApplicationManager {
 
     public SessionHelper sessionHelper;
     public GroupsHelper groupsHelper;
-    public KontaktHelper kontaktHelper;
+    private KontaktHelper kontaktHelper;
 
 
 

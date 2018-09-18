@@ -1,7 +1,5 @@
 package ru.stqa.pft.addressbook.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 public class KontaktDeleteTests extends TestBase{
@@ -11,8 +9,8 @@ public class KontaktDeleteTests extends TestBase{
     public void testKontaktDelete() {
 
 
-        app.kontaktHelper.ClickDelateKontakt();
-        app.kontaktHelper.DelateKontakt();
+        //app.kontaktHelper.ClickDelateKontakt();
+        //app.kontaktHelper.DelateKontakt();
     }
 
 }
