@@ -1,7 +1,6 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.GroupData;
 
@@ -42,7 +41,7 @@ public class GroupsHelper extends BaseHelper {
     }
 
     public void deleteSelectedGroups() {
-        if(isElementPresent(By.name("new"))) {
+        if (isElementPresent(By.name("new"))) {
             click(By.name("delete"));
         }
     }
@@ -60,4 +59,17 @@ public class GroupsHelper extends BaseHelper {
         click(By.name("update"));
     }
 
+    public void createGroup(GroupData group) {
+
+        initGroupCreation();
+        fillGroupForm(group);
+        submitGroupCreation();
+        returntoGroupPage();
+
+    }
+
+    public boolean isThereAGroup() {
+        return isElementPresent(By.name("selected[]"));
+    }
 }
+

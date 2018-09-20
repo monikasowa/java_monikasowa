@@ -11,7 +11,7 @@ public class KontaktCreationTests extends TestBase{
     public void testKontaktCreation() {
 
         app.getGroupsHelper().initGroupCreation();
-       // app.kontaktHelper.FillGroupForm(new KontaktData("Monika","Sowa","Polska","Uczniowska_24","monika.sowa.21cn@gmail.com","4324234","aaaa","aaa","1974"));
+       //app.kontaktHelper.FillGroupForm(new KontaktData("Monika","Sowa","Polska","Uczniowska_24","monika.sowa.21cn@gmail.com","4324234","aaaa","aaa","1974"));
        }
 
 
