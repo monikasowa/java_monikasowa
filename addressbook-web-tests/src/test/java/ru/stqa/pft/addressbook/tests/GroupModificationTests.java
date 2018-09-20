@@ -12,7 +12,7 @@ public class GroupModificationTests extends TestBase{
         app.getGroupsHelper().wd.findElement(By.linkText("groups")).click();
         app.getGroupsHelper().selectGroup();
         app.getGroupsHelper().initGroupModification();
-        app.getGroupsHelper().fillGroupForm(new GroupData("test7", "test8", "test9"));
+        app.getGroupsHelper().fillGroupForm(new GroupData("test7",null, null));
         app.getGroupsHelper().submitGroupModification();
         app.getGroupsHelper().returntoGroupPage();
 
