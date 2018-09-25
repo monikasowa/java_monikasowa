@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.KontaktData;
 
-public class KontaktHelper extends BaseHelper{
+public class KontaktHelper extends BaseHelper {
 
     public KontaktHelper(FirefoxDriver wd) {
         super(wd);
@@ -18,10 +18,12 @@ public class KontaktHelper extends BaseHelper{
         wd.findElement(By.id("14")).click();
     }
 
-   public void initGroupCreation() {
+    public void initGroupCreation() {
         wd.findElement(By.linkText("add new")).click();
     }
+
     public void FillGroupForm(KontaktData groupKontakt) {
+
         type(By.name("firstname"), groupKontakt.getFirstname());
         wd.findElement(By.name("middlename")).click();
         type(By.name("lastname"), "Sowa");
@@ -32,8 +34,8 @@ public class KontaktHelper extends BaseHelper{
         type(By.name("middlename"), "MS");
         type(By.name("nickname"), "Sowka");
         type(By.name("byear"), "1988");
-        wd.findElement(By.name("theform")).click();
+        wd.findElement(By.name("theform")).click();}
+
     }
 
-}
 

@@ -9,8 +9,8 @@ public class KontaktDeleteTests extends TestBase{
     public void testKontaktDelete() {
 
 
-       // app.KontaktHelper.ClickDelateKontakt();
-        //app.kontaktHelper.DelateKontakt();
+        app.kontaktHelper.ClickDelateKontakt();
+        app.kontaktHelper.DelateKontakt();
     }
 
 }

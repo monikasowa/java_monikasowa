@@ -11,14 +11,12 @@ public class ApplicationManager {
 
     public SessionHelper sessionHelper;
     public GroupsHelper groupsHelper;
-    private KontaktHelper kontaktHelper;
-
-
+    public KontaktHelper kontaktHelper;
 
 
     public void init() {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox ESR/firefox.exe"));
-        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/group.php");
         groupsHelper = new GroupsHelper(wd);
         kontaktHelper = new KontaktHelper(wd);
@@ -33,6 +31,5 @@ public class ApplicationManager {
     public GroupsHelper getGroupsHelper() {
         return groupsHelper;
     }
-
 
 }

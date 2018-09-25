@@ -8,6 +8,7 @@ public class TestBase {
 
     public final ApplicationManager app = new ApplicationManager();
 
+
     @BeforeMethod
     public void setUp() {
         app.init();
@@ -17,5 +18,6 @@ public class TestBase {
     public void tearDown() {
         app.stop();
     }
+
 
 }
