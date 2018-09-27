@@ -21,7 +21,7 @@ public class ApplicationManager {
         wd.get("http://localhost/addressbook/group.php");
         groupsHelper = new GroupsHelper(wd);
         kontaktHelper = new KontaktHelper(wd);
-        sessionHelper = new SessionHelper (wd);
+        sessionHelper = new SessionHelper(wd);
         sessionHelper.Login("admin", "secret");
     }
 
@@ -33,4 +33,7 @@ public class ApplicationManager {
         return groupsHelper;
     }
 
+    public KontaktHelper getKontaktHelper() {
+        return kontaktHelper;
+    }
 }
