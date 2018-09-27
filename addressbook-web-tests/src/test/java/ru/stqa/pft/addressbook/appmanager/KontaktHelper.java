@@ -7,16 +7,18 @@ import ru.stqa.pft.addressbook.model.KontaktData;
 
 public class KontaktHelper extends BaseHelper {
 
+
+
     public KontaktHelper(WebDriver wd) {
         super(wd);
     }
 
-   // public void DelateKontakt() {
-        //wd.findElement((By.name("selected[]"))).click();//By.xpath("//div[@id='content']/form[2]/tr[2]/input")).click();
-   // }
+    // public void DelateKontakt() {
+    //wd.findElement((By.name("selected[]"))).click();//By.xpath("//div[@id='content']/form[2]/tr[2]/input")).click();
+    // }
 
-  // public void ClickDelateKontakt() {
-       //wd.findElement((By.name("selected[]"))).click();//By.id("14")).click();
+    // public void ClickDelateKontakt() {
+    //wd.findElement((By.name("selected[]"))).click();//By.id("14")).click();
     //}
 
     public void initGroupCreation() {
@@ -45,26 +47,46 @@ public class KontaktHelper extends BaseHelper {
 
     public void submitKontaktCreation() {
         click(By.name("submit"));
-        }
+    }
 
 
     public void returntoHomePage() {
         click(By.linkText("home"));
     }
 
-    public void selectKontact() { {
-        click(By.name("selected[]"));
-    }
-    }
-
-    public void deleteSelectedKontakts() { {
-        if (isElementPresent(By.name("add new"))) {
-            click(By.name("delete"));
+    public void selectKontact() {
+        {
+            click(By.name("selected[]"));
         }
     }
+
+    public void deleteSelectedKontakts() {
+        {
+            if (isElementPresent(By.name("add new"))) {
+                click(By.name("delete"));
+            }
+        }
     }
 
 
+    public void createKontakt(KontaktData kontakt) {
+
+        initKontaktCreation();
+        fillKontaktForm(kontakt);
+        submitKontaktCreation();
+        returntoHomePage();
+
+    }
+
+    public boolean isThereAKontakt() {
+        return isElementPresent(By.name("selected[]"));
+    }
 }
+
+
+
+
+
+
 
 
