@@ -2,8 +2,13 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.KontaktData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class KontaktHelper extends BaseHelper {
 
@@ -84,6 +89,20 @@ public class KontaktHelper extends BaseHelper {
 
     public boolean isThereAKontakt() {
         return isElementPresent(By.name("selected[]"));
+    }
+
+    public List<KontaktData> getKontaktList() {
+        List<KontaktData> kontakts = new ArrayList<KontaktData>();
+        List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
+        for(WebElement element: elements) {
+            String name = element.getText();
+            KontaktData kontakt = new KontaktData("Monika", "Sowa", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974");
+            kontakts.add(kontakt);
+        }
+        return kontakts;
+
+
+
     }
 }
 
