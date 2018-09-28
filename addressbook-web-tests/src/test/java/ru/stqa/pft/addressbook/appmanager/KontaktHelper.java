@@ -51,7 +51,10 @@ public class KontaktHelper extends BaseHelper {
 
 
     public void returntoHomePage() {
-        click(By.linkText("home"));
+
+        if(isElementPresent(By.linkText("home")))  {
+            return;//click());
+        }
     }
 
     public void selectKontact() {
