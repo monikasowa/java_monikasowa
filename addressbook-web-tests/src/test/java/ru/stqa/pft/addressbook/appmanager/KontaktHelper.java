@@ -51,10 +51,11 @@ public class KontaktHelper extends BaseHelper {
 
 
     public void returntoHomePage() {
-
-        if(isElementPresent(By.linkText("home")))  {
+        if (isElementPresent(By.id("maintable")))
+        {
             return;//click());
         }
+        click(By.linkText("home"));
     }
 
     public void selectKontact() {
