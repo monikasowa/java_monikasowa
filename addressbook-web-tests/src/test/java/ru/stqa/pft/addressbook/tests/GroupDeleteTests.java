@@ -20,7 +20,7 @@ public class GroupDeleteTests extends TestBase {
             app.getGroupsHelper().createGroup(new GroupData("test4", null, null));
         }
         List<GroupData> before = app.getGroupsHelper().getGroupList();
-        app.getGroupsHelper().selectGroup();
+        app.getGroupsHelper().selectGroup(before.size() - 1);
         app.getGroupsHelper().deleteSelectedGroups();
         app.getGroupsHelper().returntoGroupPage();
 
