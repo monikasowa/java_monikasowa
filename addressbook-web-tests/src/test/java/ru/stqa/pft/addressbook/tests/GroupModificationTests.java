@@ -29,32 +29,10 @@ public class GroupModificationTests extends TestBase {
         //before.set(before.size() - 1,new GroupData("test7", "test8", "test9"));
 
         //Comparator<? super GroupData > byId = (g1, g2) -> Integer.compare(g1.getId(),g2.getId());
-<<<<<<< HEAD
-        //before.sort(byId);
-<<<<<<< HEAD
-<<<<<<< HEAD
+        // before.sort(byId);
         // after.sort(byId);
-=======
-       // before.sort(byId);
-       // after.sort(byId);
         //Assert.assertEquals(before, after);
 
->>>>>>> parent of 34d4175... Porownanie list-usuwana grupa
-=======
-       // after.sort(byId);
-       // Assert.assertEquals(before, after);
-
->>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
-=======
-       // after.sort(byId);
-       // Assert.assertEquals(before, after);
-
->>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
     }
 
 }
-
-
-
-
-

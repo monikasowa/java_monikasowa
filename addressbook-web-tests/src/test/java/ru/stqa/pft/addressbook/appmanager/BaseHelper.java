@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseHelper {
     public final WebDriver wd;
@@ -29,14 +28,14 @@ public class BaseHelper {
         }
     }
 
-        public boolean isAlertPresent() {
-            try {
-                wd.switchTo().alert();
-                return true;
-            } catch (NoAlertPresentException e) {
-                return false;
-            }
+    public boolean isAlertPresent() {
+        try {
+            wd.switchTo().alert();
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
         }
+    }
 
 
     public boolean isElementPresent(By locator) {
@@ -48,8 +47,3 @@ public class BaseHelper {
         }
     }
 }
-
-
-
-
-
