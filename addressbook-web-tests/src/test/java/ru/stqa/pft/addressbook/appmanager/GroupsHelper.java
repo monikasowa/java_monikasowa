@@ -18,12 +18,7 @@ public class GroupsHelper extends BaseHelper {
 
 
     public void returntoGroupPage() {
-            if(isElementPresent(By.tagName("h1"))
-        && wd.findElements(By.tagName("h1")).toString().equals("Groups")
-        && isElementPresent(By.tagName("new"))) {
-                return;//click());
-            }
-        click(By.linkText("groups"));
+        click(By.linkText("group page"));
     }
 
     public void submitGroupCreation() {

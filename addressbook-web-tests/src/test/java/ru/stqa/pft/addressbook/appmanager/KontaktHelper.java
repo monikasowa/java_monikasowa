@@ -56,10 +56,13 @@ public class KontaktHelper extends BaseHelper {
 
 
     public void returntoHomePage() {
+<<<<<<< HEAD
         if (isElementPresent(By.id("maintable")))
         {
             return;//click());
         }
+=======
+>>>>>>> parent of affbfe3... Warunki wstepne dla grup - poprawka
         click(By.linkText("home"));
     }
 
