@@ -53,6 +53,7 @@ public class GroupsHelper extends BaseHelper {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void selectGroup(int i){
 =======
     public void selectGroup() {
@@ -63,6 +64,9 @@ public class GroupsHelper extends BaseHelper {
 =======
     public void selectGroup() {
 >>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
+=======
+    public void selectGroup(int i) {
+>>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
         click(By.name("selected[]"));
     }
 
@@ -100,7 +104,11 @@ public class GroupsHelper extends BaseHelper {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+=======
+            String id = element.findElement(By.tagName("input")).getAttribute("value");
+>>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
 =======
             String id = element.findElement(By.tagName("input")).getAttribute("value");
 >>>>>>> parent of dfc0685... Porównanie list - tworzona grupa

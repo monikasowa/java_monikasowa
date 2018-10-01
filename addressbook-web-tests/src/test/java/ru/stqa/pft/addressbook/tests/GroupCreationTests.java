@@ -23,6 +23,7 @@ public class GroupCreationTests extends TestBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         int max = 0;
         for (GroupData g : after) {
@@ -43,8 +44,13 @@ public class GroupCreationTests extends TestBase {
         //  }
 
 >>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
+=======
+        //before.add(new GroupData("test4", null, null));
+        //Assert.assertEquals(before, after);
+        //  }
+
+>>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
     }
 
 }
-
 
