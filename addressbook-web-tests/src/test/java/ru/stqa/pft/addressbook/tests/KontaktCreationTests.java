@@ -7,7 +7,18 @@ import ru.stqa.pft.addressbook.model.KontaktData;
 public class KontaktCreationTests extends TestBase {
 
     @Test
+<<<<<<< HEAD
+
+    public void testKontaktCreation()
+    {
+=======
     public void testKontaktCreation() {
+>>>>>>> parent of 9a2f8aa... Warunki wstepne dla kontaktu - poprawka
+
+        //List<KontaktData> before = app.getKontaktHelper().getKontaktList();
+
+    public void testKontaktCreation() {
+
 
         app.getKontaktHelper().initKontaktCreation();
         app.getKontaktHelper().fillKontaktForm(new KontaktData("Monika", "Sowa", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974"));
@@ -21,3 +32,5 @@ public class KontaktCreationTests extends TestBase {
 
 
 }
+
+

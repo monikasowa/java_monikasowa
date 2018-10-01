@@ -18,12 +18,7 @@ public class GroupsHelper extends BaseHelper {
 
 
     public void returntoGroupPage() {
-        if(isElementPresent(By.tagName("h1"))
-                && wd.findElements(By.tagName("h1")).toString().equals("Groups")
-                && isElementPresent(By.tagName("new"))) {
-            return;//click());
-        }
-        click(By.linkText("groups"));
+        click(By.linkText("group page"));
     }
 
     public void submitGroupCreation() {
@@ -55,7 +50,23 @@ public class GroupsHelper extends BaseHelper {
         }
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    public void selectGroup(int i){
+=======
     public void selectGroup() {
+>>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
+=======
+    public void selectGroup(int i) {
+>>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
+=======
+    public void selectGroup() {
+>>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
+=======
+    public void selectGroup(int i) {
+>>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
         click(By.name("selected[]"));
     }
 
@@ -90,7 +101,24 @@ public class GroupsHelper extends BaseHelper {
         List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
         for(WebElement element: elements) {
             String name = element.getText();
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+=======
+            String id = element.findElement(By.tagName("input")).getAttribute("value");
+>>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
+=======
+            String id = element.findElement(By.tagName("input")).getAttribute("value");
+>>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
+            GroupData group = new GroupData(id, name, null, null);
+=======
             GroupData group = new GroupData(name, null, null);
+>>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
+=======
+            GroupData group = new GroupData(name, null, null);
+>>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
             groups.add(group);
         }
         return groups;
@@ -99,3 +127,4 @@ public class GroupsHelper extends BaseHelper {
 
     }
 }
+

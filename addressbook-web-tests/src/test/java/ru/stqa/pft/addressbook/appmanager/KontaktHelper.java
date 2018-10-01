@@ -51,10 +51,32 @@ public class KontaktHelper extends BaseHelper {
 
 
     public void returntoHomePage() {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        if (isElementPresent(By.id("maintable")))
+        {
+            return;//click());
+        }
+=======
+>>>>>>> parent of affbfe3... Warunki wstepne dla grup - poprawka
+        click(By.linkText("home"));
+=======
 
         if(isElementPresent(By.linkText("home")))  {
             return;//click());
         }
+>>>>>>> parent of 9a2f8aa... Warunki wstepne dla kontaktu - poprawka
+=======
+        click(By.linkText("home"));
+>>>>>>> parent of affbfe3... Warunki wstepne dla grup - poprawka
+=======
+
+        if(isElementPresent(By.linkText("home")))  {
+            return;//click());
+        }
+>>>>>>> parent of 9a2f8aa... Warunki wstepne dla kontaktu - poprawka
     }
 
     public void selectKontact() {
@@ -85,3 +107,11 @@ public class KontaktHelper extends BaseHelper {
         return isElementPresent(By.name("selected[]"));
     }
 }
+
+
+
+
+
+
+
+
