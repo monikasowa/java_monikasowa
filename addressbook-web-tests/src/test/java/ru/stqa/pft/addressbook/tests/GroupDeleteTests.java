@@ -19,21 +19,19 @@ public class GroupDeleteTests extends TestBase {
         if (!app.getGroupsHelper().isThereAGroup()) {
             app.getGroupsHelper().createGroup(new GroupData("test4", null, null));
         }
-<<<<<<< HEAD
+
         List<GroupData> before = app.getGroupsHelper().getGroupList();
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
         app.getGroupsHelper().selectGroup(before.size() - 1);
-=======
+
         //List<GroupData> before = app.getGroupsHelper().getGroupList();
         app.getGroupsHelper().selectGroup();
->>>>>>> parent of 34d4175... Porownanie list-usuwana grupa
-=======
+
         app.getGroupsHelper().selectGroup();
->>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
-=======
+
         app.getGroupsHelper().selectGroup();
->>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
+
         app.getGroupsHelper().deleteSelectedGroups();
         app.getGroupsHelper().returntoGroupPage();
 

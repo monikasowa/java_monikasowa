@@ -3,64 +3,52 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class GroupData {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
     private int id;
-=======
->>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
-=======
+
     private final String id;
->>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
-=======
->>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
-=======
-    private final String id;
->>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
+ final String id;
+
     private final String name;
     private final String header;
     private final String footer;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+
     public GroupData(int id, String name, String header, String footer) {
-=======
+
     public GroupData(String id, String name, String header, String footer) {
->>>>>>>parent of dfc0685...Porównanie list -tworzona grupa
-                    =======
+
+
     public GroupData(String id, String name, String header, String footer) {
->>>>>>>parent of dfc0685...Porównanie list -tworzona grupa
+
                 this.id = id;
-=======
+
     public GroupData(String name, String header, String footer) {
->>>>>>>parent of 8 c10292...Porownanie list -modyfikowana grupa
-                            =======
+
+
     public GroupData(String name, String header, String footer) {
->>>>>>>parent of 8 c10292...Porownanie list -modyfikowana grupa
+
                         this.name = name;
                         this.header = header;
                         this.footer = footer;
                     }
 
-<<<<<<<HEAD
-                            <<<<<<<HEAD
-                            <<<<<<<HEAD
-                            <<<<<<<HEAD
+
+
+
 
     public GroupData(String name, String header, String footer) {
                         this.id = 0;
-=======
+
          public GroupData(String name, String header, String footer) {
                             this.id = null;
->>>>>>>parent of dfc0685...Porównanie list -tworzona grupa
-                                    =======
+
+
          public GroupData(String name, String header, String footer) {
                                 this.id = null;
->>>>>>>parent of dfc0685...Porównanie list -tworzona grupa
+
                                 this.name = name;
                                 this.header = header;
                                 this.footer = footer;
@@ -84,10 +72,7 @@ public class GroupData {
                                 return id;
                             }
 
-=======
->>>>>>>parent of 8 c10292...Porownanie list -modyfikowana grupa
-                                    =======
->>>>>>>parent of 8 c10292...Porownanie list -modyfikowana grupa
+
                             public String getName () {
                                 return name;
                             }
@@ -103,15 +88,13 @@ public class GroupData {
                             @Override
                             public String toString () {
                                 return "GroupData{" +
-                                        <<<<<<<HEAD
-                                        <<<<<<<HEAD
-                                        <<<<<<<HEAD
-                                        <<<<<<<HEAD
+
+
                                 "id=" + id +
                                         ", name='" + name + '\'' +
                                         =======
                                 "name='" + name + '\'' +
-                                        >>>>>>>parent of 8 c10292...Porownanie list -modyfikowana grupa
+
                                 '}';
                             }
 
@@ -120,7 +103,7 @@ public class GroupData {
                                 if (this == o) return true;
                                 if (o == null || getClass() != o.getClass()) return false;
                                 GroupData groupData = (GroupData) o;
-<<<<<<<HEAD
+
                                 return id == groupData.id &&
                                         Objects.equals(name, groupData.name);
                             }
