@@ -16,9 +16,9 @@ public class KontaktModificationTests extends TestBase{
         }
         // List<GroupData> before = app.getGroupsHelper().getGroupList();
         app.getKontaktHelper().selectKontakt();
-        app.getKontaktHelper().initKontaktCreation();
+        app.getKontaktHelper().initKontaktModification();
         app.getKontaktHelper().fillKontaktForm(new KontaktData("Ala", "Slon", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974"));
-        app.getKontaktHelper().submitKontaktCreation();
+        app.getKontaktHelper().submitKontaktModifocation();
         app.getKontaktHelper().returntoHomePage();
     }
 }

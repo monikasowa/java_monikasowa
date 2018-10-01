@@ -1,9 +1,12 @@
 package ru.stqa.pft.addressbook.appmanager;
 
+import com.sun.xml.internal.ws.org.objectweb.asm.ByteVector;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.KontaktData;
+
+import java.nio.file.attribute.BasicFileAttributeView;
 
 public class KontaktHelper extends BaseHelper {
 
@@ -63,13 +66,14 @@ public class KontaktHelper extends BaseHelper {
         }
     }
 
-    public void deleteSelectedKontakts() {
+    public void deleteSelectedKontakts()
+
         {
-            if (isElementPresent(By.name("add new"))) {
+            if (isElementPresent(By.className("maintable")))
+            {
                 click(By.name("delete"));
             }
         }
-    }
 
 
     public void createKontakt(KontaktData kontakt) {
@@ -90,4 +94,14 @@ public class KontaktHelper extends BaseHelper {
             click(By.name("selected[]"));
         }
 
+   public void initKontaktModification() {
+        click(By.name("edit"));
+
+        //to nie chodzi szukam ikony kredka
+    }
+
+    public void submitKontaktModifocation() {
+        click(By.name("undone"));
+
+    }
 }
