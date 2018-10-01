@@ -5,6 +5,7 @@ import java.util.Objects;
 public class GroupData {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     private int id;
 =======
@@ -12,10 +13,13 @@ public class GroupData {
 =======
     private final String id;
 >>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
+=======
+>>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
     private final String name;
     private final String header;
     private final String footer;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public GroupData(int id, String name, String header, String footer) {
@@ -26,11 +30,15 @@ public class GroupData {
 =======
     public GroupData(String name, String header, String footer) {
 >>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
+=======
+    public GroupData(String name, String header, String footer) {
+>>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
         this.name = name;
         this.header = header;
         this.footer = footer;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -65,6 +73,8 @@ public class GroupData {
 
 =======
 >>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
+=======
+>>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
     public String getName() {
         return name;
     }
@@ -80,6 +90,7 @@ public class GroupData {
     @Override
     public String toString() {
         return "GroupData{" +
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "id=" + id +
@@ -121,4 +132,22 @@ public class GroupData {
     }
 
 >>>>>>> parent of dfc0685... Porównanie list - tworzona grupa
+=======
+                "name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GroupData groupData = (GroupData) o;
+        return Objects.equals(name, groupData.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+>>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
 }

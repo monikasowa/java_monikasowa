@@ -32,6 +32,7 @@ public class GroupModificationTests extends TestBase {
 <<<<<<< HEAD
         //before.sort(byId);
 <<<<<<< HEAD
+<<<<<<< HEAD
         // after.sort(byId);
 =======
        // before.sort(byId);
@@ -39,6 +40,11 @@ public class GroupModificationTests extends TestBase {
         //Assert.assertEquals(before, after);
 
 >>>>>>> parent of 34d4175... Porownanie list-usuwana grupa
+=======
+       // after.sort(byId);
+       // Assert.assertEquals(before, after);
+
+>>>>>>> parent of 8c10292... Porownanie list - modyfikowana grupa
 =======
        // after.sort(byId);
        // Assert.assertEquals(before, after);
