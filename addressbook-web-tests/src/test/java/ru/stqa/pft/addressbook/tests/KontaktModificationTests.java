@@ -7,8 +7,7 @@ import ru.stqa.pft.addressbook.model.KontaktData;
 public class KontaktModificationTests extends TestBase{
     @Test
 
-    public void testKontaktModification()
-    {
+    public void testKontaktModification() {
 
         app.getKontaktHelper().wd.findElement(By.linkText("home")).click();
         if(!app.getKontaktHelper().isThereAKontakt())

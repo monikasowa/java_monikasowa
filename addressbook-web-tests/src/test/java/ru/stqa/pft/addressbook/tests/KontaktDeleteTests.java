@@ -8,11 +8,14 @@ public class KontaktDeleteTests extends TestBase{
 
     @Test
 <<<<<<< HEAD
+<<<<<<< HEAD
     public void testKontaktDelete()
     {
 <<<<<<< HEAD
         //List<KontaktData> before = app.getKontaktHelper().getKontaktList();
 =======
+=======
+>>>>>>> parent of 9a2f8aa... Warunki wstepne dla kontaktu - poprawka
     public void testKontaktDelete() {
 
 >>>>>>> parent of 9a2f8aa... Warunki wstepne dla kontaktu - poprawka
