@@ -11,9 +11,14 @@ public class KontaktDeleteTests extends TestBase{
 
 
     @Test
+<<<<<<< HEAD
     public void testKontaktDelete()
     {
         //List<KontaktData> before = app.getKontaktHelper().getKontaktList();
+=======
+    public void testKontaktDelete() {
+
+>>>>>>> parent of 9a2f8aa... Warunki wstepne dla kontaktu - poprawka
         app.getKontaktHelper().wd.findElement(By.linkText("home")).click();
         app.getKontaktHelper().selectKontact();
         app.getKontaktHelper().deleteSelectedKontakts();

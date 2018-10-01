@@ -10,9 +10,14 @@ import java.util.List;
 public class KontaktCreationTests extends TestBase {
 
     @Test
+<<<<<<< HEAD
     public void testKontaktCreation()
     {
         //List<KontaktData> before = app.getKontaktHelper().getKontaktList();
+=======
+    public void testKontaktCreation() {
+
+>>>>>>> parent of 9a2f8aa... Warunki wstepne dla kontaktu - poprawka
         app.getKontaktHelper().initKontaktCreation();
         app.getKontaktHelper().fillKontaktForm(new KontaktData("Monika", "Sowa", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974"));
         app.getKontaktHelper().submitKontaktCreation();
