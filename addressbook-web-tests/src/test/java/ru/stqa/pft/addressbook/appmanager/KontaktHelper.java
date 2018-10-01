@@ -100,8 +100,14 @@ public class KontaktHelper extends BaseHelper {
         //to nie chodzi szukam ikony kredka
     }
 
-    public void submitKontaktModifocation() {
+    public void submitKontaktModification() {
         click(By.name("undone"));
 
     }
+
+    public void gotoMainPage()
+    {
+        click(By.linkText("home"));
+    }
 }
+
