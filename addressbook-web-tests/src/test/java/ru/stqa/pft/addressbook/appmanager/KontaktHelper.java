@@ -84,4 +84,10 @@ public class KontaktHelper extends BaseHelper {
     public boolean isThereAKontakt() {
         return isElementPresent(By.name("selected[]"));
     }
+
+    public void selectKontakt()
+        {
+            click(By.name("selected[]"));
+        }
+
 }
