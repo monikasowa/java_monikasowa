@@ -11,18 +11,18 @@ import java.util.List;
 public class GroupsHelper extends BaseHelper {
 
 
-    public GroupsHelper(WebDriver wd) {
-        
-
+    public GroupsHelper(WebDriver wd)
+    {
         super(wd);
     }
 
-
-    public void returntoGroupPage() {
+    public void returntoGroupPage()
+    {
         if(isElementPresent(By.tagName("h1"))
                 && wd.findElements(By.tagName("h1")).toString().equals("Groups")
-                && isElementPresent(By.tagName("new"))) {
-            return;//click());
+                && isElementPresent(By.tagName("new")))
+        {
+            return;
         }
         click(By.linkText("groups"));
     }
