@@ -57,6 +57,7 @@ public class KontaktHelper extends BaseHelper {
     public void returntoHomePage() {
 
         if (isElementPresent(By.linkText("home"))) {
+
             return;//click());
         }
     }

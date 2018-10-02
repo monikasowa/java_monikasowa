@@ -12,6 +12,7 @@ public class GroupsHelper extends BaseHelper {
 
 
     public GroupsHelper(WebDriver wd) {
+        
 
         super(wd);
     }

@@ -9,6 +9,7 @@ public class KontaktDeleteTests extends TestBase{
     @Test
     public void testKontaktDelete() {
 
+
         app.getKontaktHelper().gotoMainPage();//wd.findElement(By.linkText("home")).click();
         app.getKontaktHelper().selectKontact();
         app.getKontaktHelper().deleteSelectedKontakts();

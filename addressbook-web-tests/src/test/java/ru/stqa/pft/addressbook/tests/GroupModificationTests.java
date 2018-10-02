@@ -19,6 +19,7 @@ public class GroupModificationTests extends TestBase {
         //List<GroupData> before = app.getGroupsHelper().getGroupList();
 
         app.getGroupsHelper().selectGroup();
+
         app.getGroupsHelper().initGroupModification();
         app.getGroupsHelper().fillGroupForm(new GroupData("test7", "test8", "test9"));
         app.getGroupsHelper().submitGroupModification();

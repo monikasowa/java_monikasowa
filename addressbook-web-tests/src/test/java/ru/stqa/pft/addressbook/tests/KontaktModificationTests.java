@@ -10,6 +10,7 @@ public class KontaktModificationTests extends TestBase{
     public void testKontaktModification() {
 
 
+
         app.getKontaktHelper().gotoMainPage();
         if(!app.getKontaktHelper().isThereAKontakt())
         {

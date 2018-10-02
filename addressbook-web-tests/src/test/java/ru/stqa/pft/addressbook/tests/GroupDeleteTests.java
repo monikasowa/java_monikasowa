@@ -16,6 +16,7 @@ public class GroupDeleteTests extends TestBase {
 
         app.getGroupsHelper().wd.findElement(By.linkText("groups")).click();
 
+
         if (!app.getGroupsHelper().isThereAGroup()) {
             app.getGroupsHelper().createGroup(new GroupData("test4", null, null));
         }
