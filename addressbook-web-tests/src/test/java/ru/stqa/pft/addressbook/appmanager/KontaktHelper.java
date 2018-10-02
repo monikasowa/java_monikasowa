@@ -3,13 +3,14 @@ package ru.stqa.pft.addressbook.appmanager;
 import com.sun.xml.internal.ws.org.objectweb.asm.ByteVector;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.KontaktData;
 
 import java.nio.file.attribute.BasicFileAttributeView;
+import java.util.ArrayList;
 
 public class KontaktHelper extends BaseHelper {
-
 
 
     public KontaktHelper(WebDriver wd) {
@@ -55,7 +56,7 @@ public class KontaktHelper extends BaseHelper {
 
     public void returntoHomePage() {
 
-        if(isElementPresent(By.linkText("home")))  {
+        if (isElementPresent(By.linkText("home"))) {
             return;//click());
         }
     }
@@ -66,14 +67,11 @@ public class KontaktHelper extends BaseHelper {
         }
     }
 
-    public void deleteSelectedKontakts()
-
-        {
-            if (isElementPresent(By.className("maintable")))
-            {
-                click(By.name("delete"));
-            }
+    public void deleteSelectedKontakts() {
+        if (isElementPresent(By.className("maintable"))) {
+            click(By.name("delete"));
         }
+    }
 
 
     public void createKontakt(KontaktData kontakt) {
@@ -89,25 +87,31 @@ public class KontaktHelper extends BaseHelper {
         return isElementPresent(By.name("selected[]"));
     }
 
-    public void selectKontakt()
+    public void selectKontakt() {
+
+        wd.findElement(By.linkText("home")).click();
+        if (!wd.findElement(By.id("51")).isSelected()) {
+            wd.findElement(By.id("51")).click();
+        }
+    }
+
+        public void submitKontaktModification ()
         {
-            click(By.name("selected[]"));
+            click(By.name("update"));
         }
 
-   public void initKontaktModification() {
-        click(By.name("edit"));
 
-        //to nie chodzi szukam ikony kredka
-    }
+            public void initKontaktModification ()
+            {
+                wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img")).click();
+            }
 
-    public void submitKontaktModification() {
-        click(By.name("undone"));
-
-    }
 
     public void gotoMainPage()
     {
         click(By.linkText("home"));
     }
 }
+
+
 

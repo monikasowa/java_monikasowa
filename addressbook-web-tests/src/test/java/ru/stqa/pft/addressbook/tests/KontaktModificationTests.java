@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.KontaktData;
 
@@ -7,6 +8,7 @@ public class KontaktModificationTests extends TestBase{
     @Test
 
     public void testKontaktModification() {
+
 
         app.getKontaktHelper().gotoMainPage();
         if(!app.getKontaktHelper().isThereAKontakt())
