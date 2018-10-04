@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import com.sun.xml.internal.ws.org.objectweb.asm.ByteVector;
+import javafx.beans.value.ObservableBooleanValue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,21 +10,18 @@ import ru.stqa.pft.addressbook.model.KontaktData;
 
 import java.nio.file.attribute.BasicFileAttributeView;
 import java.util.ArrayList;
+import java.util.List;
 
 public class KontaktHelper extends BaseHelper {
+
+
+    private ObservableBooleanValue cell;
 
 
     public KontaktHelper(WebDriver wd) {
         super(wd);
     }
 
-    // public void DelateKontakt() {
-    //wd.findElement((By.name("selected[]"))).click();//By.xpath("//div[@id='content']/form[2]/tr[2]/input")).click();
-    // }
-
-    // public void ClickDelateKontakt() {
-    //wd.findElement((By.name("selected[]"))).click();//By.id("14")).click();
-    //}
 
     public void initGroupCreation() {
         wd.findElement(By.name("new")).click();
@@ -58,24 +56,25 @@ public class KontaktHelper extends BaseHelper {
 
         if (isElementPresent(By.linkText("home"))) {
 
-            return;//click());
+            return;
         }
     }
 
-    public void selectKontact() {
+    public void selectKontact(int i) {
         {
             click(By.name("selected[]"));
         }
     }
 
     public void deleteSelectedKontakts() {
-        if (isElementPresent(By.className("maintable"))) {
+        if (isElementPresent(By.className("maintable")))
+        {
             click(By.name("delete"));
         }
     }
 
 
-    public void createKontakt(KontaktData kontakt) {
+        public void createKontakt(KontaktData kontakt) {
 
         initKontaktCreation();
         fillKontaktForm(kontakt);
@@ -112,6 +111,25 @@ public class KontaktHelper extends BaseHelper {
     {
         click(By.linkText("home"));
     }
+
+    public List<KontaktData> getKontaktList() {
+        List<KontaktData> kontakts = new ArrayList<KontaktData>();
+        List<WebElement> elements = wd.findElements(By.name("entry"));
+        for (WebElement row : elements) {
+
+            List<WebElement> tabCells = row.findElements(By.tagName("td"));
+            String firstname = tabCells.get(1).getText();
+            String lastname = tabCells.get(2).getText();
+            int id = Integer.parseInt(row.findElement(By.tagName("input")).getAttribute("value"));
+
+
+            KontaktData kontakt = new KontaktData(firstname, lastname, null, null, null, null, null, null, null);
+            kontakts.add(kontakt);
+        }
+        return kontakts;
+    }
+
+
 }
 
 

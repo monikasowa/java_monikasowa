@@ -23,6 +23,7 @@ public class GroupCreationTests extends TestBase {
         Assert.assertEquals(after.size(), before.size() + 1);
 
 
+
         int max = 0;
         for (GroupData g : after) {
             if (g.getId() > max) {
