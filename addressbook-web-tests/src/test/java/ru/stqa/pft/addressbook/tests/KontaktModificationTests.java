@@ -17,10 +17,11 @@ public class KontaktModificationTests extends TestBase{
             app.getKontaktHelper().createKontakt(new KontaktData("Monika", "Sowa", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974"));
         }
         // List<GroupData> before = app.getGroupsHelper().getGroupList();
-        app.getKontaktHelper().selectKontakt();
+        app.getKontaktHelper().selectKontakt("61");
         app.getKontaktHelper().initKontaktModification();
-        app.getKontaktHelper().fillKontaktForm(new KontaktData("Ala", "Slon", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974"));
+        app.getKontaktHelper().fillKontaktForm(new KontaktData("Karolina", "Kiszka", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974"));
         app.getKontaktHelper().submitKontaktModification();
         app.getKontaktHelper().returntoHomePage();
     }
+
 }

@@ -51,10 +51,12 @@ public class GroupsHelper extends BaseHelper {
     }
 
     public void deleteSelectedGroups() {
-        if (isElementPresent(By.name("new"))) {
+        if (isElementPresent(By.name("new")))
+        {
             click(By.name("delete"));
         }
     }
+
     public void selectGroup(int i) {
         click(By.name("selected[]"));
     }

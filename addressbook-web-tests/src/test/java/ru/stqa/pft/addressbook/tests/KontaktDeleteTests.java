@@ -20,14 +20,17 @@ public class KontaktDeleteTests extends TestBase{
             app.getKontaktHelper().createKontakt(new KontaktData("Monika","Sowka","null", "null","null", "null", "null", "null" , "null"  ));
         }
         List<KontaktData> before = app.getKontaktHelper().getKontaktList();
-        app.getKontaktHelper().selectKontact(before.size()-1);
+        KontaktData k = before.get(before.size()-1);
+        int id_k = k.getId();
+        String id_s = Integer.toString(id_k);
+        app.getKontaktHelper().selectKontakt(id_s);
         app.getKontaktHelper().deleteSelectedKontakts();
         app.getKontaktHelper().returntoHomePage();
         List<KontaktData> after = app.getKontaktHelper().getKontaktList();
-        Assert.assertEquals(after.size(), before.size() );
+        Assert.assertEquals(after.size(), before.size()-1 );// czemu tu nie może być before() -1//
 
-        //before.remove(before.size() - 1);
-       //Assert.assertEquals(before, after);
+        before.remove(before.size() - 1);
+       Assert.assertEquals(before, after);
     }
 
 }

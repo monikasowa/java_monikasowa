@@ -45,6 +45,10 @@ public class KontaktData {
         return id;
     }
 
+    public String getFirstName() {
+        return firstname;
+    }
+
 
     public void setId(int max) {
         this.id = id;
@@ -89,6 +93,9 @@ public class KontaktData {
                 '}';
     }
 
+    public String getLastName() {
+        return lastname;
+    }
 }
 
 
