@@ -27,10 +27,10 @@ public class KontaktDeleteTests extends TestBase{
         app.getKontaktHelper().deleteSelectedKontakts();
         app.getKontaktHelper().returntoHomePage();
         List<KontaktData> after = app.getKontaktHelper().getKontaktList();
-        Assert.assertEquals(after.size(), before.size()-1 );// czemu tu nie może być before() -1//
+        Assert.assertEquals(after.size(), before.size()-1 );
 
         before.remove(before.size() - 1);
-       Assert.assertEquals(before, after);
+        Assert.assertEquals(before, after);
     }
 
 }
