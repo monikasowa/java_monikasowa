@@ -29,6 +29,7 @@ public class KontaktDeleteTests extends TestBase{
         List<KontaktData> after = app.getKontaktHelper().getKontaktList();
         Assert.assertEquals(after.size(), before.size()-1 );
 
+
         before.remove(before.size() - 1);
         Assert.assertEquals(before, after);
     }

@@ -44,6 +44,7 @@ public class KontaktHelper extends BaseHelper {
         //wd.findElement(By.name("submit")).click();
     }
 
+    
     public void initKontaktCreation() {
         click(By.linkText("add new"));
     }
