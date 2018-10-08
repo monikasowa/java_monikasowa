@@ -15,6 +15,7 @@ public class KontaktData {
     private final String byear;
 
 
+
     public KontaktData(String firstname, String lastname, String company, String address, String mail, String home, String middlename, String nickname, String byear) {
         this.id = 0;
         this.firstname = firstname;
@@ -59,49 +60,47 @@ public class KontaktData {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "KontaktData{" +
-                "id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", company='" + company + '\'' +
-                ", address='" + address + '\'' +
-                ", mail='" + mail + '\'' +
-                ", home='" + home + '\'' +
-                ", middlename='" + middlename + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", byear='" + byear + '\'' +
-                '}';
-    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        KontaktData that = (KontaktData) o;
-
-        return id == that.id &&
-                Objects.equals(firstname, that.firstname) &&
-                Objects.equals(lastname, that.lastname) &&
-                Objects.equals(company, that.company) &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(mail, that.mail) &&
-                Objects.equals(home, that.home) &&
-                Objects.equals(middlename, that.middlename) &&
-                Objects.equals(nickname, that.nickname) &&
-                Objects.equals(byear, that.byear);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstname, lastname, company, address, mail, home, middlename, nickname, byear);
-    }
 
 
     public String getLastName() {
         return lastname;
     }
+
+
+    public Object getFirstname() {
+        return firstname;
+    }
+
+
+
+
+    public Object getLasttname() {
+        return firstname;
+    }
+
+
+    @Override
+    public String toString() {
+        return "KontaktData{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KontaktData that = (KontaktData) o;
+        return Objects.equals(firstname, that.firstname) &&
+                Objects.equals(lastname, that.lastname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname);
+    }
+
 }
 
 

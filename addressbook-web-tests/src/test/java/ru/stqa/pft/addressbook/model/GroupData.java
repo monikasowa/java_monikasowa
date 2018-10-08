@@ -17,8 +17,6 @@ public class GroupData {
 
     }
 
-
-
     public GroupData(String name, String header, String footer) {
         this.id = Integer.MAX_VALUE;
         this.name = name;
@@ -50,10 +48,10 @@ public class GroupData {
     @Override
     public String toString() {
         return "GroupData{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

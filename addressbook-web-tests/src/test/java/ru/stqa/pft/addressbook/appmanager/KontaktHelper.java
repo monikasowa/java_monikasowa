@@ -1,14 +1,11 @@
 package ru.stqa.pft.addressbook.appmanager;
 
-import com.sun.xml.internal.ws.org.objectweb.asm.ByteVector;
 import javafx.beans.value.ObservableBooleanValue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.KontaktData;
 
-import java.nio.file.attribute.BasicFileAttributeView;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,7 +41,7 @@ public class KontaktHelper extends BaseHelper {
         //wd.findElement(By.name("submit")).click();
     }
 
-    
+
     public void initKontaktCreation() {
         click(By.linkText("add new"));
     }
@@ -83,11 +80,9 @@ public class KontaktHelper extends BaseHelper {
         return isElementPresent(By.name("selected[]"));}
 
 
-    public void selectKontakt(String i)
-
-        {
-            wd.findElement(By.id(i)).click();
-        }
+    public void selectKontakt(int i) {
+        click(By.name("selected[]"));
+    }
 
 
         public void submitKontaktModification ()
@@ -98,7 +93,7 @@ public class KontaktHelper extends BaseHelper {
 
             public void initKontaktModification ()
             {
-                wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[6]/td[8]/a/img")).click();
+                wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img")).click();
             }
 
 
@@ -113,8 +108,8 @@ public class KontaktHelper extends BaseHelper {
         for (WebElement element : elements) {
 
             List<WebElement> cells = element.findElements(By.tagName("td"));
-            String firstname = cells.get(1).getText();
-            String lastname = cells.get(2).getText();
+            String lastname = cells.get(1).getText();
+            String firstname = cells.get(2).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
 
 

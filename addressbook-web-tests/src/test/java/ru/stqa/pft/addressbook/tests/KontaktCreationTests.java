@@ -11,23 +11,22 @@ import java.util.List;
 
 public class KontaktCreationTests extends TestBase {
 
+
+
     @Test
     public void testKontaktCreation() {
-
+        app.getKontaktHelper().returntoHomePage();
         List<KontaktData> before = app.getKontaktHelper().getKontaktList();
         KontaktData kontakt = new KontaktData("Monika", "Sowa", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974");
-        app.getKontaktHelper().initKontaktCreation();
-        app.getKontaktHelper().fillKontaktForm(new KontaktData("Monika", "Sowa", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974"));
-        app.getKontaktHelper().submitKontaktCreation();
-        app.getKontaktHelper().returntoHomePage();
+        app.getKontaktHelper().createKontakt(kontakt);
         List<KontaktData> after = app.getKontaktHelper().getKontaktList();
         Assert.assertEquals(after.size(), before.size() + 1);
 
 
-        before.add(kontakt);
         Comparator<? super KontaktData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
         before.sort(byId);
         after.sort(byId);
+        before.add(kontakt);
         Assert.assertEquals(before, after);
     }
 }

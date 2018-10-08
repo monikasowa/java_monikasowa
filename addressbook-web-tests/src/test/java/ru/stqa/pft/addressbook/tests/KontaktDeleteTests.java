@@ -15,23 +15,19 @@ public class KontaktDeleteTests extends TestBase{
 
         app.getKontaktHelper().gotoMainPage();
 
-        if (!app.getKontaktHelper().isThereAKontakt())
-        {
-            app.getKontaktHelper().createKontakt(new KontaktData("Monika","Sowka","null", "null","null", "null", "null", "null" , "null"  ));
+        if (!app.getKontaktHelper().isThereAKontakt()) {
+            app.getKontaktHelper().createKontakt(new KontaktData("Monika", "Sowka", "null", "null", "null", "null", "null", "null", "null"));
         }
         List<KontaktData> before = app.getKontaktHelper().getKontaktList();
-        KontaktData k = before.get(before.size()-1);
+        KontaktData k = before.get(before.size() - 1);
         int id_k = k.getId();
         String id_s = Integer.toString(id_k);
-        app.getKontaktHelper().selectKontakt(id_s);
+
+        app.getKontaktHelper().selectKontakt(before.size() - 1);
         app.getKontaktHelper().deleteSelectedKontakts();
         app.getKontaktHelper().returntoHomePage();
         List<KontaktData> after = app.getKontaktHelper().getKontaktList();
-        Assert.assertEquals(after.size(), before.size()-1 );
-
-
-        before.remove(before.size() - 1);
-        Assert.assertEquals(before, after);
+        Assert.assertEquals(after.size(), before.size() - 1);
     }
 
 }

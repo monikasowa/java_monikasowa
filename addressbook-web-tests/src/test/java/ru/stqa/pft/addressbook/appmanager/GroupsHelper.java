@@ -11,6 +11,8 @@ import java.util.List;
 public class GroupsHelper extends BaseHelper {
 
 
+
+
     public GroupsHelper(WebDriver wd)
     {
         super(wd);
@@ -57,7 +59,7 @@ public class GroupsHelper extends BaseHelper {
         }
     }
 
-    public void selectGroup(int i) {
+    public void selectGroup(int i ) {
         click(By.name("selected[]"));
     }
 
