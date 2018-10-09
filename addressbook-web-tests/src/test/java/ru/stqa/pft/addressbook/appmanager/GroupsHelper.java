@@ -105,4 +105,8 @@ public class GroupsHelper extends BaseHelper {
 
 
     }
+
+    public void goToNavigatePage() {
+        wd.findElement(By.linkText("groups")).click();
+    }
 }

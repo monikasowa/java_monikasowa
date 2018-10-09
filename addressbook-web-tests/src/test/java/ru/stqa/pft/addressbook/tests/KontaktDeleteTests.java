@@ -13,7 +13,7 @@ public class KontaktDeleteTests extends TestBase{
     public void testKontaktDelete() {
 
 
-        app.getKontaktHelper().gotoMainPage();
+
 
         if (!app.getKontaktHelper().isThereAKontakt()) {
             app.getKontaktHelper().createKontakt(new KontaktData("Monika", "Sowka", "null", "null", "null", "null", "null", "null", "null"));

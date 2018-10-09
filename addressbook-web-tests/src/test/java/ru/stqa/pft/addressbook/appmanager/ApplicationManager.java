@@ -18,7 +18,7 @@ public class ApplicationManager {
     public void init() {
         wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox ESR/firefox.exe"));
         wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        wd.get("http://localhost/addressbook/group.php");
+        wd.get("http://localhost/addressbook/");
         groupsHelper = new GroupsHelper(wd);
         kontaktHelper = new KontaktHelper(wd);
         sessionHelper = new SessionHelper(wd);
