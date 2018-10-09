@@ -3,6 +3,7 @@ package ru.stqa.pft.addressbook.model;
 import java.util.Objects;
 
 public class KontaktData {
+
     private int id;
     private final String firstname;
     private final String lastname;
@@ -32,6 +33,7 @@ public class KontaktData {
 
 
 
+
     public KontaktData(int id, String firstname, String lastname, String company, String address, String mail, String home, String middlename, String nickname, String byear) {
         this.id = id;
         this.firstname = firstname;
@@ -56,11 +58,6 @@ public class KontaktData {
     }
 
 
-    public void setId(int max) {
-        this.id = id;
-    }
-
-
 
 
     public String getLastName() {
@@ -79,27 +76,34 @@ public class KontaktData {
         return firstname;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Override
     public String toString() {
         return "KontaktData{" +
-                "firstname='" + firstname + '\'' +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         KontaktData that = (KontaktData) o;
-        return Objects.equals(firstname, that.firstname) &&
+        return id == that.id &&
+                Objects.equals(firstname, that.firstname) &&
                 Objects.equals(lastname, that.lastname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstname, lastname);
+        return Objects.hash(id, firstname, lastname);
     }
+
 
 }
 

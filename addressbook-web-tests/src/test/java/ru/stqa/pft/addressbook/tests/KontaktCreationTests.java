@@ -2,11 +2,9 @@ package ru.stqa.pft.addressbook.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.KontaktData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class KontaktCreationTests extends TestBase {
@@ -23,11 +21,11 @@ public class KontaktCreationTests extends TestBase {
         Assert.assertEquals(after.size(), before.size() + 1);
 
 
-        /*Comparator<? super KontaktData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
+        Comparator<? super KontaktData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
         before.sort(byId);
         after.sort(byId);
         before.add(kontakt);
-        Assert.assertEquals(before, after);*/
+        Assert.assertEquals(before, after);
     }
 }
 

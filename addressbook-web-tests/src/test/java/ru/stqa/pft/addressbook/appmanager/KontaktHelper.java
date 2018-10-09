@@ -15,6 +15,8 @@ public class KontaktHelper extends BaseHelper {
     private ObservableBooleanValue cell;
 
 
+
+
     public KontaktHelper(WebDriver wd) {
         super(wd);
     }
@@ -80,8 +82,8 @@ public class KontaktHelper extends BaseHelper {
         return isElementPresent(By.name("selected[]"));}
 
 
-    public void selectKontakt(int i) {
-        click(By.name("selected[]"));
+    public void selectKontakt(int index ) {
+        wd.findElements(By.name("selected[]")).get(index).click();
     }
 
 
@@ -90,11 +92,11 @@ public class KontaktHelper extends BaseHelper {
             click(By.name("update"));
         }
 
-
-            public void initKontaktModification ()
+            public void initKontaktModification(int max1)
             {
-                wd.findElement(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img")).click();
+                click(By.xpath("//a[@href='edit.php?id=" + max1 + "']"));
             }
+
 
 
     public void gotoMainPage()
@@ -118,9 +120,6 @@ public class KontaktHelper extends BaseHelper {
         }
         return kontakts;
     }
-
-
-
 }
 
 
