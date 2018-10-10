@@ -75,7 +75,13 @@ public class KontaktHelper extends BaseHelper {
         fillKontaktForm(kontakt);
         submitKontaktCreation();
         returntoHomePage();
-
+    }
+    public void modifyKontakt(KontaktData kontakt, int max1, int index) {
+        selectKontakt(index);
+        initKontaktModification(max1);
+        fillKontaktForm(kontakt);
+        submitKontaktModification();
+        returntoHomePage();
     }
 
     public boolean isThereAKontakt() {

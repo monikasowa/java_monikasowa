@@ -46,13 +46,6 @@ public class GroupData {
     }
 
     @Override
-    public String toString() {
-        return "GroupData{" +
-                "name='" + name + '\'' +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -64,4 +57,12 @@ public class GroupData {
     public int hashCode() {
         return Objects.hash(name);
     }
+
+    @Override
+    public String toString() {
+        return "GroupData{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
 }

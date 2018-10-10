@@ -78,7 +78,13 @@ public class GroupsHelper extends BaseHelper {
         fillGroupForm(group);
         submitGroupCreation();
         returntoGroupPage();
-
+    }
+    public void modifyGroup(int index, GroupData group) {
+        selectGroup(index);
+        initGroupModification();
+        fillGroupForm(group);
+        submitGroupModification();
+        returntoGroupPage();
     }
 
     public boolean isThereAGroup() {
