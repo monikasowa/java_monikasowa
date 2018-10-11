@@ -17,7 +17,9 @@ public class KontaktDeleteTests extends TestBase{
         }
     }
     @Test
-    public void testKontaktDelete() {
+    public void testKontaktDelete()
+
+    {
 
         List<KontaktData> before = app.getKontaktHelper().getKontaktList();
         KontaktData k = before.get(before.size() - 1);
