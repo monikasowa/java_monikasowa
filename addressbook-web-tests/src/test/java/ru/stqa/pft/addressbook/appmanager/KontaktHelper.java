@@ -59,8 +59,6 @@ public class KontaktHelper extends BaseHelper {
 
     }
 
-
-
     public void deleteSelectedKontakts()
         {
             wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
@@ -74,14 +72,14 @@ public class KontaktHelper extends BaseHelper {
         initKontaktCreation();
         fillKontaktForm(kontakt);
         submitKontaktCreation();
-        returntoHomePage();
+        gotoMainPage();
     }
     public void modifyKontakt(KontaktData kontakt, int max1, int index) {
         selectKontakt(index);
         initKontaktModification(max1);
         fillKontaktForm(kontakt);
         submitKontaktModification();
-        returntoHomePage();
+        gotoMainPage();
     }
 
     public boolean isThereAKontakt() {

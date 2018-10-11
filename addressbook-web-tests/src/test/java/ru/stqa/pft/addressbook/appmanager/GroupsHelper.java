@@ -11,23 +11,10 @@ import java.util.List;
 public class GroupsHelper extends BaseHelper {
 
 
-
-
-    public GroupsHelper(WebDriver wd)
-    {
+    public GroupsHelper(WebDriver wd) {
         super(wd);
     }
 
-    public void returntoGroupPage()
-    {
-        if(isElementPresent(By.tagName("h1"))
-                && wd.findElements(By.tagName("h1")).toString().equals("Groups")
-                && isElementPresent(By.tagName("new")))
-        {
-            return;
-        }
-        click(By.linkText("groups"));
-    }
 
     public void submitGroupCreation() {
         click(By.name("submit"));
@@ -53,13 +40,12 @@ public class GroupsHelper extends BaseHelper {
     }
 
     public void deleteSelectedGroups() {
-        if (isElementPresent(By.name("new")))
-        {
+        if (isElementPresent(By.name("new"))) {
             click(By.name("delete"));
         }
     }
 
-    public void selectGroup(int index ) {
+    public void selectGroup(int index) {
         wd.findElements(By.name("selected[]")).get(index).click();
     }
 
@@ -77,42 +63,60 @@ public class GroupsHelper extends BaseHelper {
         initGroupCreation();
         fillGroupForm(group);
         submitGroupCreation();
-        returntoGroupPage();
+        gotoGroupPage();
     }
+
+
     public void modifyGroup(int index, GroupData group) {
         selectGroup(index);
         initGroupModification();
         fillGroupForm(group);
         submitGroupModification();
-        returntoGroupPage();
+        gotoGroupPage();
+    }
+
+    public void gotoGroupPage() {
+        {
+            if (isElementPresent(By.tagName("h1"))
+                    && wd.findElements(By.tagName("h1")).toString().equals("Groups")
+                    && isElementPresent(By.tagName("new"))) {
+                return;
+            }
+            click(By.linkText("groups"));
+        }
+    }
+    public void gotoHomePage() {
+        if (isElementPresent(By.id("maintable"))) {
+            return;
+        }
+        click(By.linkText("home"));
+    }
+
+
+    private void returntoGroupPage() {
+        {
+
+            wd.findElement(By.xpath("//div[@id='nav']//a[.='home']")).click();
+
+        }
     }
 
     public boolean isThereAGroup() {
         return isElementPresent(By.name("selected[]"));
     }
 
-    public int getGroupCount() {
-        return wd.findElements(By.name("selected[]")).size();
-    }
-
 
     public List<GroupData> getGroupList() {
         List<GroupData> groups = new ArrayList<GroupData>();
         List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
-        for(WebElement element: elements) {
+        for (WebElement element : elements) {
             String name = element.getText();
             String id = element.findElement(By.tagName("input")).getAttribute("value");
             GroupData group = new GroupData(Integer.parseInt(id), name, null, null);
             groups.add(group);
         }
         return groups;
-
-
-
-
-    }
-
-    public void goToNavigatePage() {
-        wd.findElement(By.linkText("groups")).click();
     }
 }
+
+

@@ -13,6 +13,7 @@ public class ApplicationManager {
     public SessionHelper sessionHelper;
     public GroupsHelper groupsHelper;
     public KontaktHelper kontaktHelper;
+    public NavigationHelper navigationHelper;
 
 
     public void init() {
@@ -22,6 +23,7 @@ public class ApplicationManager {
         groupsHelper = new GroupsHelper(wd);
         kontaktHelper = new KontaktHelper(wd);
         sessionHelper = new SessionHelper(wd);
+        navigationHelper = new NavigationHelper(wd);
         sessionHelper.Login("admin", "secret");
     }
 
@@ -33,7 +35,13 @@ public class ApplicationManager {
         return groupsHelper;
     }
 
+    public NavigationHelper  getNavigationHelper(){
+        return navigationHelper;
+    }
+
     public KontaktHelper getKontaktHelper() {
         return kontaktHelper;
     }
+
+
 }
