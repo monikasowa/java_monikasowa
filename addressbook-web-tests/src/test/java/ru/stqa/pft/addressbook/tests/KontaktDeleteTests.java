@@ -7,7 +7,8 @@ import ru.stqa.pft.addressbook.model.KontaktData;
 
 import java.util.List;
 
-public class KontaktDeleteTests extends TestBase{
+public class KontaktDeleteTests extends TestBase
+{
 
     @BeforeMethod
     public void ensurePreconditions() {

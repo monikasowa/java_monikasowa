@@ -8,7 +8,8 @@ import ru.stqa.pft.addressbook.model.GroupData;
 import java.util.List;
 
 
-public class GroupDeleteTests extends TestBase {
+public class GroupDeleteTests extends TestBase
+{
 
     @BeforeMethod
     public void ensurePreconditions() {
