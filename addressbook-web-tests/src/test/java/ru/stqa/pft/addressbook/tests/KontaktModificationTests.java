@@ -27,8 +27,9 @@ public class KontaktModificationTests extends TestBase{
         for (KontaktData k: before){
             if (k.getId()> max1){
                 max1 = k.getId();
+
             }
-            
+
         }
 
         app.getKontaktHelper().modifyKontakt(kontakt, max1,index);

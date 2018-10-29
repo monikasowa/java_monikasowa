@@ -14,6 +14,7 @@ public class KontaktCreationTests extends TestBase {
 
     @Test
     public void testKontaktCreation()
+
     {
 
         List<KontaktData> before = app.getKontaktHelper().getKontaktList();
