@@ -7,9 +7,13 @@ import ru.stqa.pft.addressbook.model.KontaktData;
 
 import java.util.List;
 
+<<<<<<< HEAD
 public class KontaktDeleteTests extends TestBase
 
 {
+=======
+public class KontaktDeleteTests extends TestBase{
+>>>>>>> parent of 801096c... Zadanie 7 - adressbook-Firefox
 
     @BeforeMethod
     public void ensurePreconditions() {

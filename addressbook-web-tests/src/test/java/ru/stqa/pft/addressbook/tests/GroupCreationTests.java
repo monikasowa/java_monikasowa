@@ -7,11 +7,15 @@ import ru.stqa.pft.addressbook.model.GroupData;
 import java.util.Comparator;
 import java.util.List;
 
+<<<<<<< HEAD
 public class GroupCreationTests extends TestBase
 
 
 
 {
+=======
+public class GroupCreationTests extends TestBase {
+>>>>>>> parent of 801096c... Zadanie 7 - adressbook-Firefox
 
     @Test
     public void testGroupCreation() {

@@ -8,9 +8,13 @@ import ru.stqa.pft.addressbook.model.GroupData;
 import java.util.List;
 
 
+<<<<<<< HEAD
 public class GroupDeleteTests extends TestBase
 
 {
+=======
+public class GroupDeleteTests extends TestBase {
+>>>>>>> parent of 801096c... Zadanie 7 - adressbook-Firefox
 
     @BeforeMethod
     public void ensurePreconditions() {

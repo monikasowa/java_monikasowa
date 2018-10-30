@@ -29,9 +29,11 @@ public class KontaktModificationTests extends TestBase{
                 max1 = k.getId();
 
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 801096c... Zadanie 7 - adressbook-Firefox
         }
-
         app.getKontaktHelper().modifyKontakt(kontakt, max1,index);
         List<KontaktData> after = app.getKontaktHelper().getKontaktList();
         Assert.assertEquals(after.size(), before.size());

@@ -22,9 +22,13 @@ public class GroupModificationTests extends TestBase {
 
     @Test
 
+<<<<<<< HEAD
     public void testGroupModification()
 
     {
+=======
+    public void testGroupModification() {
+>>>>>>> parent of 801096c... Zadanie 7 - adressbook-Firefox
 
         List<GroupData> before = app.getGroupsHelper().getGroupList();
         int index = before.size() - 1;
