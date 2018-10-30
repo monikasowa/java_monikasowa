@@ -5,15 +5,18 @@ import java.util.Objects;
 public class KontaktData {
 
     private int id;
-    private final String firstname;
-    private final String lastname;
-    private final String company;
-    private final String address;
-    private final String mail;
-    private final String home;
-    private final String middlename;
-    private final String nickname;
-    private final String byear;
+
+
+
+    private String firstname;
+    private String lastname;
+    private String company;
+    private String address;
+    private String mail;
+    private String home;
+    private String middlename;
+    private String nickname;
+    private String byear;
 
 
 
@@ -49,6 +52,42 @@ public class KontaktData {
 
     public int getId() {
         return id;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public void setHome(String home) {
+        this.home = home;
+    }
+
+    public void setMiddlename(String middlename) {
+        this.middlename = middlename;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public void setByear(String byear) {
+        this.byear = byear;
     }
 
 
