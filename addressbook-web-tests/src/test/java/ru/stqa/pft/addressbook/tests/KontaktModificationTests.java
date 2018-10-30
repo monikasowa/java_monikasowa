@@ -10,13 +10,14 @@ import java.util.List;
 
 public class KontaktModificationTests extends TestBase{
 
-   @BeforeMethod
+    @BeforeMethod
     public void ensurePreconditions() {
         app.getKontaktHelper().gotoMainPage();
         if (!app.getKontaktHelper().isThereAKontakt()) {
             app.getKontaktHelper().createKontakt(new KontaktData("Monika", "Sowa", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974"));
         }
     }
+
     @Test
     public void testKontaktModification() {
         List<KontaktData> before = app.getKontaktHelper().getKontaktList();
@@ -27,13 +28,10 @@ public class KontaktModificationTests extends TestBase{
         for (KontaktData k: before){
             if (k.getId()> max1){
                 max1 = k.getId();
-
             }
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of 801096c... Zadanie 7 - adressbook-Firefox
         }
+
         app.getKontaktHelper().modifyKontakt(kontakt, max1,index);
         List<KontaktData> after = app.getKontaktHelper().getKontaktList();
         Assert.assertEquals(after.size(), before.size());

@@ -8,18 +8,15 @@ import ru.stqa.pft.addressbook.model.KontaktData;
 import java.util.Comparator;
 import java.util.List;
 
+
 public class KontaktCreationTests extends TestBase {
 
 
 
     @Test
-<<<<<<< HEAD
     public void testKontaktCreation()
 
     {
-=======
-    public void testKontaktCreation() {
->>>>>>> parent of 801096c... Zadanie 7 - adressbook-Firefox
 
         List<KontaktData> before = app.getKontaktHelper().getKontaktList();
         KontaktData kontakt = new KontaktData("Monika", "Sowa", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974");

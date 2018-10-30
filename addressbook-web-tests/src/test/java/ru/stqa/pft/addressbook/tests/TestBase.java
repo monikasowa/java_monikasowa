@@ -1,27 +1,25 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import ru.stqa.pft.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
 
-<<<<<<< HEAD
-    protected final ApplicationManager app = new ApplicationManager(BrowserType.CHROME);
-=======
-    public final ApplicationManager app = new ApplicationManager();
->>>>>>> parent of 801096c... Zadanie 7 - adressbook-Firefox
+    protected static final ApplicationManager app = new ApplicationManager(BrowserType.FIREFOX);
 
 
-    @BeforeMethod
-    public void setUp() {
+    @BeforeSuite
+    public void setUp() throws Exception {
         app.init();
     }
 
-    @AfterMethod
+
+    @AfterSuite
     public void tearDown() {
         app.stop();
     }
-
-
 }

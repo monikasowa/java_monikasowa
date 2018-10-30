@@ -50,7 +50,6 @@ public class GroupsHelper extends BaseHelper {
     }
 
     public void initGroupModification() {
-
         click(By.name("edit"));
     }
 
@@ -58,55 +57,38 @@ public class GroupsHelper extends BaseHelper {
         click(By.name("update"));
     }
 
-    public void createGroup(GroupData group) {
+    public void create(GroupData group) {
 
         initGroupCreation();
         fillGroupForm(group);
         submitGroupCreation();
-        gotoGroupPage();
+        returntoGroupPage();
     }
 
 
-    public void modifyGroup(int index, GroupData group) {
+    public void modify(int index, GroupData group) {
         selectGroup(index);
         initGroupModification();
         fillGroupForm(group);
         submitGroupModification();
-        gotoGroupPage();
+        returntoGroupPage();
+    }
+    public void delete(int index) {
+        selectGroup(index);
+        deleteSelectedGroups();
+        returntoGroupPage();
     }
 
-    public void gotoGroupPage() {
-        {
-            if (isElementPresent(By.tagName("h1"))
-                    && wd.findElements(By.tagName("h1")).toString().equals("Groups")
-                    && isElementPresent(By.tagName("new"))) {
-                return;
-            }
-            click(By.linkText("groups"));
-        }
-    }
-    public void gotoHomePage() {
-        if (isElementPresent(By.id("maintable"))) {
-            return;
-        }
-        click(By.linkText("home"));
-    }
+    public void returntoGroupPage() {
+        wd.findElement(By.linkText("group page")).click();}
 
-
-    private void returntoGroupPage() {
-        {
-
-            wd.findElement(By.xpath("//div[@id='nav']//a[.='home']")).click();
-
-        }
-    }
 
     public boolean isThereAGroup() {
         return isElementPresent(By.name("selected[]"));
     }
 
 
-    public List<GroupData> getGroupList() {
+    public List<GroupData> list() {
         List<GroupData> groups = new ArrayList<GroupData>();
         List<WebElement> elements = wd.findElements(By.cssSelector("span.group"));
         for (WebElement element : elements) {

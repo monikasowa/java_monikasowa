@@ -7,13 +7,8 @@ import ru.stqa.pft.addressbook.model.KontaktData;
 
 import java.util.List;
 
-<<<<<<< HEAD
 public class KontaktDeleteTests extends TestBase
-
 {
-=======
-public class KontaktDeleteTests extends TestBase{
->>>>>>> parent of 801096c... Zadanie 7 - adressbook-Firefox
 
     @BeforeMethod
     public void ensurePreconditions() {
@@ -26,6 +21,7 @@ public class KontaktDeleteTests extends TestBase{
     public void testKontaktDelete()
 
     {
+
 
         List<KontaktData> before = app.getKontaktHelper().getKontaktList();
         KontaktData k = before.get(before.size() - 1);
