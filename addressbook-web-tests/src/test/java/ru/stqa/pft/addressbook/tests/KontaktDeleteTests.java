@@ -14,7 +14,7 @@ public class KontaktDeleteTests extends TestBase
     public void ensurePreconditions() {
         app.getKontaktHelper().gotoMainPage();
         if (!app.getKontaktHelper().isThereAKontakt()) {
-            app.getKontaktHelper().createKontakt(new KontaktData("Monika", "Sowa", "Polska", "Uczniowska_24", "monika.sowa.21cn@gmail.com", "4324234", "aaaa", "aaa", "1974"));
+            app.getKontaktHelper().createKontakt(new KontaktData().withFirstname("Monika").withLastname("Sowa"));
         }
     }
     @Test

@@ -117,10 +117,7 @@ public class KontaktHelper extends BaseHelper {
             String lastname = cells.get(1).getText();
             String firstname = cells.get(2).getText();
             int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-
-
-            KontaktData kontakt = new KontaktData(id,firstname, lastname, null, null, null, null, null, null, null);
-            kontakts.add(kontakt);
+            kontakts.add(new KontaktData().withId(id).withFirstname(firstname).withLastname(lastname));
         }
         return kontakts;
     }

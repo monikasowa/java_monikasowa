@@ -4,10 +4,7 @@ import java.util.Objects;
 
 public class KontaktData {
 
-    private int id;
-
-
-
+    private int id = 0;
     private String firstname;
     private String lastname;
     private String company;
@@ -18,79 +15,59 @@ public class KontaktData {
     private String nickname;
     private String byear;
 
-
-
-    public KontaktData(String firstname, String lastname, String company, String address, String mail, String home, String middlename, String nickname, String byear) {
-        this.id = 0;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.company = company;
-        this.address = address;
-        this.mail = mail;
-        this.home = home;
-        this.middlename = middlename;
-        this.nickname = nickname;
-        this.byear = byear;
-
-    }
-
-
-
-
-    public KontaktData(int id, String firstname, String lastname, String company, String address, String mail, String home, String middlename, String nickname, String byear) {
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.company = company;
-        this.address = address;
-        this.mail = mail;
-        this.home = home;
-        this.middlename = middlename;
-        this.nickname = nickname;
-        this.byear = byear;
-    }
-
     public int getId() {
         return id;
     }
 
-    public void setFirstname(String firstname) {
+    public KontaktData withId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public KontaktData withFirstname(String firstname) {
         this.firstname = firstname;
+        return this;
     }
 
-    public void setLastname(String lastname) {
+    public KontaktData withLastname(String lastname) {
         this.lastname = lastname;
+        return this;
     }
 
-    public void setCompany(String company) {
+    public KontaktData withCompany(String company) {
         this.company = company;
+        return this;
     }
 
-    public void setAddress(String address) {
+    public KontaktData withAddress(String address) {
         this.address = address;
+        return this;
     }
 
-    public void setMail(String mail) {
+    public KontaktData  withMail(String mail) {
         this.mail = mail;
+        return this;
     }
 
-    public void setHome(String home) {
+    public KontaktData withHome(String home) {
         this.home = home;
+        return this;
     }
 
-    public void setMiddlename(String middlename) {
+    public KontaktData withMiddlename(String middlename) {
         this.middlename = middlename;
+        return this;
     }
 
-    public void setNickname(String nickname) {
+    public KontaktData withNickname(String nickname) {
         this.nickname = nickname;
+        return this;
     }
 
-    public void setByear(String byear) {
+    public KontaktData withByear(String byear) {
         this.byear = byear;
+        return this;
     }
-
-
 
     public String getFirstName() {
         return firstname;
@@ -115,9 +92,7 @@ public class KontaktData {
         return firstname;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 
     @Override
     public boolean equals(Object o) {
