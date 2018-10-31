@@ -60,14 +60,14 @@ public class KontaktHelper extends BaseHelper {
     }
 
     public void deleteSelectedKontakts()
-        {
-            wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
-            wd.switchTo().alert().accept();
-        }
+    {
+        wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+        wd.switchTo().alert().accept();
+    }
 
 
 
-        public void createKontakt(KontaktData kontakt) {
+    public void createKontakt(KontaktData kontakt) {
 
         initKontaktCreation();
         fillKontaktForm(kontakt);
@@ -91,15 +91,15 @@ public class KontaktHelper extends BaseHelper {
     }
 
 
-        public void submitKontaktModification ()
-        {
-            click(By.name("update"));
-        }
+    public void submitKontaktModification ()
+    {
+        click(By.name("update"));
+    }
 
-            public void initKontaktModification(int max1)
-            {
-                click(By.xpath("//a[@href='edit.php?id=" + max1 + "']"));
-            }
+    public void initKontaktModification(int max1)
+    {
+        click(By.xpath("//a[@href='edit.php?id=" + max1 + "']"));
+    }
 
 
 
