@@ -3,55 +3,41 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.KontaktData;
 
 import java.util.Comparator;
-import java.util.List;
+import java.util.Set;
 
-public class KontaktModificationTests extends TestBase{
+public class KontaktModificationTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        app.getKontaktHelper().gotoMainPage();
-        if (!app.getKontaktHelper().isThereAKontakt()) {
-            app.getKontaktHelper().createKontakt(new KontaktData()
+        app.kontakt().goHome();
+        if (app.group().all().size() == 0) {
+            app.kontakt().create(new KontaktData()
                     .withFirstname("Monika").withLastname("Sowa"));
-
         }
     }
 
     @Test
     public void testKontaktModification() {
-        List<KontaktData> before = app.getKontaktHelper().getKontaktList();
-        int index = before.size()-1;
+        Set<KontaktData> before = app.kontakt().all();
+        KontaktData modifiedKontakt = before.iterator().next();
         KontaktData kontakt = new KontaktData()
-                .withId(before.get(index).getId()).withFirstname("Monika").withLastname("Kot");
-
-
-        int max1 = 0;
+                .withId((modifiedKontakt).getId()).withFirstname("Monika").withLastname("Kot");
+        /*int max1 = 0;
         for (KontaktData k: before){
-            if (k.getId()> max1){
-                max1 = k.getId();
-            }
-
+        if (k.getId()> max1){
+        max1 = k.getId();
         }
-
-        app.getKontaktHelper().modifyKontakt(kontakt, max1,index);
-        List<KontaktData> after = app.getKontaktHelper().getKontaktList();
+         }*/
+        app.kontakt().modify(kontakt);
+        Set<KontaktData> after = app.kontakt().all();
         Assert.assertEquals(after.size(), before.size());
-
-
-        Comparator<? super KontaktData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
-        before.sort(byId);
-        after.sort(byId);
-        before.remove(index);
-        kontakt.withId(max1);
+        before.remove(modifiedKontakt);
+        //kontakt.withId();
         before.add(kontakt);
         Assert.assertEquals(before, after);
-
     }
-
-
-
 }
-

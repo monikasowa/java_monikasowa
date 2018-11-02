@@ -1,38 +1,27 @@
 package ru.stqa.pft.addressbook.tests;
 
-
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.KontaktData;
 
 import java.util.Comparator;
-import java.util.List;
-
+import java.util.Set;
 
 public class KontaktCreationTests extends TestBase {
-
-
-
     @Test
     public void testKontaktCreation()
-
     {
-
-        List<KontaktData> before = app.getKontaktHelper().getKontaktList();
+        Set<KontaktData> before = app.kontakt().all();
         KontaktData kontakt = new KontaktData().withFirstname("Monika").withLastname("Sowa");
-        app.getKontaktHelper().createKontakt(kontakt);
-        List<KontaktData> after = app.getKontaktHelper().getKontaktList();
+        app.kontakt().create(kontakt);
+        Set<KontaktData> after = app.kontakt().all();
         Assert.assertEquals(after.size(), before.size() + 1);
-
-
-        Comparator<? super KontaktData> byId = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
-        before.sort(byId);
-        after.sort(byId);
+        kontakt.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt());
         before.add(kontakt);
         Assert.assertEquals(before, after);
     }
 }
+
 
 
 

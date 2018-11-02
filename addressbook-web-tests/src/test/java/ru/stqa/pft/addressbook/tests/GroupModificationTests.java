@@ -22,19 +22,17 @@ public class GroupModificationTests extends TestBase {
     public void testGroupModification() {
         Set<GroupData> before = app.group().all();
         GroupData modifiedGroup = before.iterator().next();
-        int index = before.size() - 1;
         GroupData group = new GroupData()
                 .withId((modifiedGroup).getId()).withName("test7").withFooter("test2").withHeader("test3");
         app.group().modify(group);
         Set<GroupData> after = app.group().all();
         Assert.assertEquals(after.size(), before.size());
-
-
         before.remove(modifiedGroup);
         before.add(group);
         Assert.assertEquals(before, after);
     }
 }
+
 
 
 

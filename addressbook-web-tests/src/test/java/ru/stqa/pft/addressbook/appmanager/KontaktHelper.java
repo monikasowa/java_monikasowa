@@ -4,17 +4,18 @@ import javafx.beans.value.ObservableBooleanValue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.KontaktData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class KontaktHelper extends BaseHelper {
 
 
     private ObservableBooleanValue cell;
-
-
 
 
     public KontaktHelper(WebDriver wd) {
@@ -30,9 +31,9 @@ public class KontaktHelper extends BaseHelper {
 
         //type(By.name("firstname"), groupKontakt.getFirstname());
         //type(By.name("firstname"), "Kasia");
-        type(By.name("firstname"),groupKontakt.getFirstName());
+        type(By.name("firstname"), groupKontakt.getFirstName());
         //wd.findElement(By.name("middlename")).click();
-        type(By.name("lastname"),groupKontakt.getLastName());
+        type(By.name("lastname"), groupKontakt.getLastName());
         type(By.name("company"), "Polska");
         type(By.name("address"), "Uczniowska 24");
         type(By.name("email"), "monika.sowa.21cn@gmail.com");
@@ -59,57 +60,67 @@ public class KontaktHelper extends BaseHelper {
 
     }
 
-    public void deleteSelectedKontakts()
-    {
+    public void deleteSelectedKontakts() {
         wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
         wd.switchTo().alert().accept();
     }
 
 
-
-    public void createKontakt(KontaktData kontakt) {
+    public void create(KontaktData kontakt) {
 
         initKontaktCreation();
         fillKontaktForm(kontakt);
         submitKontaktCreation();
-        gotoMainPage();
+        goHome();
     }
-    public void modifyKontakt(KontaktData kontakt, int max1, int index) {
-        selectKontakt(index);
-        initKontaktModification(max1);
+
+    public void modify(KontaktData kontakt) {
+        selectKontaktById(kontakt.getId());
+        initKontaktModification(kontakt.getId());
         fillKontaktForm(kontakt);
         submitKontaktModification();
-        gotoMainPage();
+        goHome();
     }
 
+    public void delete(int index) {
+        selectKontakt(index);
+        deleteSelectedKontakts();
+        returntoHomePage();
+    }
+    
+
+    public void delete(KontaktData kontakt) {
+        selectKontaktById(kontakt.getId());
+        deleteSelectedKontakts();
+        returntoHomePage();
+    }
+
+
     public boolean isThereAKontakt() {
-        return isElementPresent(By.name("selected[]"));}
+        return isElementPresent(By.name("selected[]"));
+    }
 
 
-    public void selectKontakt(int index ) {
+    public void selectKontakt(int index) {
         wd.findElements(By.name("selected[]")).get(index).click();
     }
 
+    public void selectKontaktById(int id) {
 
-    public void submitKontaktModification ()
-    {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
+    }
+
+
+    public void submitKontaktModification() {
         click(By.name("update"));
     }
 
-    public void initKontaktModification(int max1)
-    {
-        click(By.xpath("//a[@href='edit.php?id=" + max1 + "']"));
+    public void initKontaktModification(int i) {
+        click(By.xpath("//a[@href='edit.php?id=" + i + "']"));
     }
 
-
-
-    public void gotoMainPage()
-    {
-        click(By.linkText("home"));
-    }
-
-    public List<KontaktData> getKontaktList() {
-        List<KontaktData> kontakts = new ArrayList<KontaktData>();
+    public Set<KontaktData> all() {
+        Set<KontaktData> kontakts = new HashSet<>();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element : elements) {
 
@@ -121,7 +132,11 @@ public class KontaktHelper extends BaseHelper {
         }
         return kontakts;
     }
-}
+
+
+
+    }
+
 
 
 

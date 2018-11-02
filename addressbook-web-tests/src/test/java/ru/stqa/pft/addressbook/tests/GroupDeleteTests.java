@@ -18,6 +18,7 @@ public class GroupDeleteTests extends TestBase
             app.group().create(new GroupData().withName("test4"));
         }
     }
+
     @Test
     public void testGroupDelete() {
 

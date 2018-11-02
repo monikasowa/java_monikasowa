@@ -46,4 +46,14 @@ public class BaseHelper {
             return false;
         }
     }
-}
+
+    public void goHome() {
+        if (isElementPresent(By.id("maintable"))) {
+            return;
+        }
+        click(By.linkText("home"));
+    }
+
+    }
+
+

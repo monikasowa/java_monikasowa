@@ -25,8 +25,7 @@ public class ApplicationManager {
 
 
     public void init() {
-        //wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox ESR/firefox.exe"));
-        //String browser = BrowserType.FIREFOX;
+
         if (browser == BrowserType.FIREFOX) {
             wd = new FirefoxDriver();
         } else if (browser == BrowserType.CHROME) {
@@ -53,11 +52,13 @@ public class ApplicationManager {
 
     public NavigationHelper goTo(){
         return navigationHelper;
-    }
 
-    public KontaktHelper getKontaktHelper() {
+    }
+    public KontaktHelper kontakt() {
         return kontaktHelper;
     }
-
+    public NavigationHelper goHome() {
+        return navigationHelper;
+    }
 
 }

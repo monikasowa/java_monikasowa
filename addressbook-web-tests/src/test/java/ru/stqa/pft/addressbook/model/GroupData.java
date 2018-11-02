@@ -26,7 +26,6 @@ public class GroupData {
                 ", name='" + name + '\'' +
                 '}';
     }
-
     private String name;
     private String header;
     private String footer;
@@ -39,22 +38,18 @@ public class GroupData {
         this.id = id;
         return this;
     }
-
     public GroupData withName(String name) {
         this.name = name;
         return this;
     }
-
     public GroupData withHeader(String header) {
         this.header = header;
         return this;
     }
-
     public GroupData withFooter(String footer) {
         this.footer = footer;
         return this;
     }
-
     public String getName() {
         return name;
     }
