@@ -18,6 +18,7 @@ import static org.testng.Assert.assertEquals;
 
 public class GroupDeleteTests extends TestBase
 {
+
     @BeforeMethod
     public void ensurePreconditions() {
         app.goTo().groupPage();
