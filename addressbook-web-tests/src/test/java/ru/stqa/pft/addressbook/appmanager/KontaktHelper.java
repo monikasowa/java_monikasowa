@@ -87,7 +87,7 @@ public class KontaktHelper extends BaseHelper {
         deleteSelectedKontakts();
         returntoHomePage();
     }
-    
+
 
     public void delete(KontaktData kontakt) {
         selectKontaktById(kontakt.getId());

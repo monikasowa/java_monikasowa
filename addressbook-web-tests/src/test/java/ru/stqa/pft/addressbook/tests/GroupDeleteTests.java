@@ -1,5 +1,8 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
+import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -30,7 +33,7 @@ public class GroupDeleteTests extends TestBase
 
         before.remove(deletedGroup);
         Assert.assertEquals(before.size(), after.size());
-
+        //MatcherAssert.assertThat(after, CoreMatchers.equalTo(before.)
     }
 }
 
