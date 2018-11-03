@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.GroupData;
 import ru.stqa.pft.addressbook.model.KontaktData;
+import ru.stqa.pft.addressbook.model.Kontakts;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -121,8 +122,8 @@ public class KontaktHelper extends BaseHelper {
             click(By.xpath("//a[@href='edit.php?id=" + i + "']"));
         }
 
-        public Set<KontaktData> all () {
-            Set<KontaktData> kontakts = new HashSet<>();
+        public Kontakts all () {
+            Kontakts kontakts = new Kontakts();
             List<WebElement> elements = wd.findElements(By.name("entry"));
             for (WebElement element : elements) {
 
