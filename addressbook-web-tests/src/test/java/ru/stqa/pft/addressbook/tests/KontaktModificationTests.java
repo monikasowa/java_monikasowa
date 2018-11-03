@@ -29,4 +29,5 @@ public class KontaktModificationTests extends TestBase {
         assertThat(after.size(),equalTo(before.size()));
         assertThat(after, equalTo(before.without(modifiedKontakt).withAdded(kontakt)));
     }
+
 }
