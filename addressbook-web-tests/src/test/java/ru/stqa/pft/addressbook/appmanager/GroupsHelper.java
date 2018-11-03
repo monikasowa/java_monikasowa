@@ -65,7 +65,7 @@ public class GroupsHelper extends BaseHelper {
         submitGroupCreation();
         returntoGroupPage();
     }
-    
+
     public void modify(GroupData group) {
         selectGroupById(group.getId());
         initGroupModification();
