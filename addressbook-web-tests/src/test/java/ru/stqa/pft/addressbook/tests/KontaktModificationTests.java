@@ -20,12 +20,11 @@ public class KontaktModificationTests extends TestBase {
     @BeforeMethod
     public void ensurePreconditions() {
         app.kontakt().goHome();
-        if (app.group().all().size() == 0) {
+        if (app.kontakt().all().size() == 0) {
             app.kontakt().create(new KontaktData()
                     .withFirstname("Monika").withLastname("Sowa"));
         }
     }
-
     @Test
     public void testKontaktModification() {
         Set<KontaktData> before = app.kontakt().all();

@@ -106,36 +106,39 @@ public class KontaktHelper extends BaseHelper {
     }
 
     public void selectKontaktById(int id) {
+        /*if (!wd.findElement(By.id("208")).isSelected()) {
+            wd.findElement(By.id("208")).click();}*/
 
-        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
-    }
 
-
-    public void submitKontaktModification() {
-        click(By.name("update"));
-    }
-
-    public void initKontaktModification(int i) {
-        click(By.xpath("//a[@href='edit.php?id=" + i + "']"));
-    }
-
-    public Set<KontaktData> all() {
-        Set<KontaktData> kontakts = new HashSet<>();
-        List<WebElement> elements = wd.findElements(By.name("entry"));
-        for (WebElement element : elements) {
-
-            List<WebElement> cells = element.findElements(By.tagName("td"));
-            String lastname = cells.get(1).getText();
-            String firstname = cells.get(2).getText();
-            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-            kontakts.add(new KontaktData().withId(id).withFirstname(firstname).withLastname(lastname));
+            wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
         }
-        return kontakts;
+
+        public void submitKontaktModification () {
+            click(By.name("update"));
+        }
+
+        public void initKontaktModification ( int i){
+            click(By.xpath("//a[@href='edit.php?id=" + i + "']"));
+        }
+
+        public Set<KontaktData> all () {
+            Set<KontaktData> kontakts = new HashSet<>();
+            List<WebElement> elements = wd.findElements(By.name("entry"));
+            for (WebElement element : elements) {
+
+                List<WebElement> cells = element.findElements(By.tagName("td"));
+                String lastname = cells.get(1).getText();
+                String firstname = cells.get(2).getText();
+                int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+                kontakts.add(new KontaktData().withId(id).withFirstname(firstname).withLastname(lastname));
+            }
+            return kontakts;
+        }
+
+
     }
 
 
-
-    }
 
 
 

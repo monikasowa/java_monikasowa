@@ -34,7 +34,7 @@ public class GroupData {
         return id;
     }
 
-    
+
     public GroupData withId(int id) {
         this.id = id;
         return this;
