@@ -21,12 +21,12 @@ public class Kontakts extends ForwardingSet<KontaktData> {
         return delegate;
     }
 
+    
     public Kontakts withAdded(KontaktData kontakt) {
         Kontakts kontakts = new Kontakts(this);
         kontakts.add(kontakt);
         return kontakts;
     }
-
     public Kontakts without(KontaktData kontakt) {
         Kontakts kontakts = new Kontakts(this);
         kontakts.remove(kontakt);

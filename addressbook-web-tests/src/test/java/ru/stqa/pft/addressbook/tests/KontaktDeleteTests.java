@@ -23,6 +23,7 @@ public class KontaktDeleteTests extends TestBase
 
     {
 
+
         Kontakts before = app.kontakt().all();
         KontaktData deletedKontakt = before.iterator().next();
         //KontaktData k = before.get(before.size() - 1);

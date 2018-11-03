@@ -20,7 +20,9 @@ public class KontaktCreationTests extends TestBase {
         assertThat(after, equalTo(before.withAdded(
                 kontakt.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
     }
+
 }
+
 
 
 

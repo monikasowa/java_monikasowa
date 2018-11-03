@@ -30,4 +30,5 @@ public class KontaktModificationTests extends TestBase {
         assertThat(after, equalTo(before.without(modifiedKontakt).withAdded(kontakt)));
     }
 
+
 }
