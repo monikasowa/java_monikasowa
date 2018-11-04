@@ -33,8 +33,6 @@ public class GroupsHelper extends BaseHelper {
         click(By.name("group_footer"));
         wd.findElement(By.name("group_footer")).clear();
         wd.findElement(By.name("group_footer")).sendKeys(groupData.getFooter());
-
-
     }
 
     public void initGroupCreation() {
@@ -86,6 +84,9 @@ public class GroupsHelper extends BaseHelper {
     public void returntoGroupPage() {
         wd.findElement(By.linkText("group page")).click();
     }
+
+    public int count() {
+       return wd.findElements(By.name("selected[]")).size();}
 
     public boolean isThereAGroup() {
         return isElementPresent(By.name("selected[]"));

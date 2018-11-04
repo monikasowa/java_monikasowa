@@ -105,6 +105,9 @@ public class KontaktHelper extends BaseHelper {
         return isElementPresent(By.name("selected[]"));
     }
 
+    public int count() {
+        return wd.findElements(By.name("selected[]")).size();}
+
 
     public void selectKontakt(int index) {
         wd.findElements(By.name("selected[]")).get(index).click();
