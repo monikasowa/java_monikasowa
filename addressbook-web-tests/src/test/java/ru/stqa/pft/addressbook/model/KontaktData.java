@@ -10,7 +10,9 @@ public class KontaktData {
     private String company;
     private String address;
     private String mail;
-    private String home;
+    private String homePhone;
+    private String mobilePhone;
+    private String workPhone;
     private String middlename;
     private String nickname;
     private String byear;
@@ -43,8 +45,16 @@ public class KontaktData {
         this.mail = mail;
         return this;
     }
-    public KontaktData withHome(String home) {
-        this.home = home;
+    public KontaktData withHomePhone(String homePhone) {
+        this.homePhone = homePhone;
+        return this;
+    }
+    public KontaktData withMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+        return this;
+    }
+    public KontaktData withWorkPhone(String workPhone) {
+        this.workPhone = workPhone;
         return this;
     }
     public KontaktData withMiddlename(String middlename) {
@@ -62,14 +72,21 @@ public class KontaktData {
     public String getFirstName() {
         return firstname;
     }
+    public String getAddress() {
+        return address;
+    }
+    public String getMail() {
+        return mail;
+    }
+    public String getHomePhone() { return homePhone; }
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+    public String getWorkPhone() {
+        return workPhone;
+    }
     public String getLastName() {
         return lastname;
-    }
-    public Object getFirstname() {
-        return firstname;
-    }
-    public Object getLasttname() {
-        return firstname;
     }
 
     @Override
@@ -95,6 +112,8 @@ public class KontaktData {
     public int hashCode() {
         return Objects.hash(id, firstname, lastname);
     }
+
+
 }
 
 
