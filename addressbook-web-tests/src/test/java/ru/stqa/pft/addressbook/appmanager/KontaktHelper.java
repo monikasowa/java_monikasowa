@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import ru.stqa.pft.addressbook.model.GroupData;
+import ru.stqa.pft.addressbook.model.Groups;
 import ru.stqa.pft.addressbook.model.KontaktData;
 import ru.stqa.pft.addressbook.model.Kontakts;
 
@@ -72,6 +73,7 @@ public class KontaktHelper extends BaseHelper {
         initKontaktCreation();
         fillKontaktForm(kontakt);
         submitKontaktCreation();
+        kontaktCache = null;
         goHome();
     }
 
@@ -80,6 +82,7 @@ public class KontaktHelper extends BaseHelper {
         initKontaktModification(kontakt.getId());
         fillKontaktForm(kontakt);
         submitKontaktModification();
+        kontaktCache = null;
         goHome();
     }
 
@@ -93,6 +96,7 @@ public class KontaktHelper extends BaseHelper {
     public void delete(KontaktData kontakt) {
         selectKontaktById(kontakt.getId());
         deleteSelectedKontakts();
+        kontaktCache = null;
         returntoHomePage();
     }
 
@@ -122,8 +126,15 @@ public class KontaktHelper extends BaseHelper {
             click(By.xpath("//a[@href='edit.php?id=" + i + "']"));
         }
 
+    private Kontakts kontaktCache = null;
+
         public Kontakts all () {
-            Kontakts kontakts = new Kontakts();
+            if(kontaktCache != null)
+            {
+                return new Kontakts(kontaktCache);
+            }
+
+            kontaktCache = new Kontakts();
             List<WebElement> elements = wd.findElements(By.name("entry"));
             for (WebElement element : elements) {
 
@@ -131,12 +142,10 @@ public class KontaktHelper extends BaseHelper {
                 String lastname = cells.get(1).getText();
                 String firstname = cells.get(2).getText();
                 int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-                kontakts.add(new KontaktData().withId(id).withFirstname(firstname).withLastname(lastname));
+                kontaktCache.add(new KontaktData().withId(id).withFirstname(firstname).withLastname(lastname));
             }
-            return kontakts;
+            return new Kontakts(kontaktCache);
         }
-
-
     }
 
 
