@@ -43,7 +43,6 @@ public class KontaktPhoneTests extends TestBase {
     {
         return phone.replaceAll("\\s", "").replaceAll("[-()]", "");
     }
-
 }
 
 
