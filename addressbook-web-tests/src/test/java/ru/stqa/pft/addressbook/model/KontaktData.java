@@ -17,7 +17,15 @@ public class KontaktData {
     private String nickname;
     private String byear;
     private String allPhones;
+    private String details;
 
+    public KontaktData withDetails(String details) {
+        this.details = details;
+        return this;
+    }
+    public String getDetails() {
+        return details;
+    }
     public String getAllPhones() {
         return allPhones;
     }
@@ -135,6 +143,9 @@ public class KontaktData {
     public int hashCode() {
         return Objects.hash(id, firstname, lastname);
     }
+
+
+
 }
 
 
