@@ -49,6 +49,11 @@ public class KontaktData {
         this.workPhone = workPhone;
     }
 
+    public void setAddress(String address) { this.address = address; }
+
+    public void setMail(String mail) { this.mail = mail;
+    }
+
     public KontaktData withCompany(String company) {
         this.company = company;
         return this;
@@ -89,15 +94,13 @@ public class KontaktData {
         this.byear = byear;
         return this;
     }
+
+
     public String getFirstName() {
         return firstname;
     }
-    public String getAddress() {
-        return address;
-    }
-    public String getMail() {
-        return mail;
-    }
+    public String getAddress() { return address; }
+    public String getMail() { return mail; }
     public String getHomePhone() { return homePhone; }
     public String getMobilePhone() {
         return mobilePhone;
