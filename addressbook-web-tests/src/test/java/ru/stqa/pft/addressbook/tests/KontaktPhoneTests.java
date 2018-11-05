@@ -20,6 +20,7 @@ public class KontaktPhoneTests extends TestBase {
                     .withHomePhone("567").withMobilePhone("278").withWorkPhone("349"));
         }
     }
+
     @Test
     public void testKontaktPhone() {
         app.goTo().goHome();
@@ -32,15 +33,17 @@ public class KontaktPhoneTests extends TestBase {
     }
 
     private String mergePhones(KontaktData kontakt) {
-        return Arrays.asList(kontakt.getHomePhone(),kontakt.getMobilePhone(), kontakt.getWorkPhone())
-                .stream().filter((s) -> ! s.equals(""))
-                 .map(KontaktPhoneTests::cleaned)
+        return Arrays.asList(kontakt.getHomePhone(), kontakt.getMobilePhone(), kontakt.getWorkPhone())
+                .stream().filter((s) -> !s.equals(""))
+                .map(KontaktPhoneTests::cleaned)
                 .collect(Collectors.joining("\n"));
     }
 
-    public static String cleaned(String phone) { ;
-        return phone.replaceAll("\\s", "").replaceAll("[-()]",  "");
+    public static String cleaned(String phone)
+    {
+        return phone.replaceAll("\\s", "").replaceAll("[-()]", "");
     }
-    }
+
+}
 
 
