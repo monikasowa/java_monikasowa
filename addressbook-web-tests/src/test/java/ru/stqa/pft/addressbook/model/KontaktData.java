@@ -16,7 +16,11 @@ public class KontaktData {
     private String middlename;
     private String nickname;
     private String byear;
+    private String allPhones;
 
+    public String getAllPhones() {
+        return allPhones;
+    }
     public int getId() {
         return id;
     }
@@ -33,6 +37,18 @@ public class KontaktData {
         return this;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
+
+    public void setWorkPhone(String workPhone) {
+        this.workPhone = workPhone;
+    }
+
     public KontaktData withCompany(String company) {
         this.company = company;
         return this;
@@ -43,6 +59,10 @@ public class KontaktData {
     }
     public KontaktData  withMail(String mail) {
         this.mail = mail;
+        return this;
+    }
+    public KontaktData withAllPhones(String allPhones) {
+        this.allPhones = allPhones;
         return this;
     }
     public KontaktData withHomePhone(String homePhone) {
@@ -112,8 +132,6 @@ public class KontaktData {
     public int hashCode() {
         return Objects.hash(id, firstname, lastname);
     }
-
-
 }
 
 
