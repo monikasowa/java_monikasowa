@@ -8,6 +8,7 @@ import java.util.Objects;
 @XStreamAlias("group")
 public class GroupData {
 
+
    @XStreamOmitField
     private int id = Integer.MIN_VALUE;
     private String name;

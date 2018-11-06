@@ -34,7 +34,6 @@ public class GroupDataGenerator {
         }
         generator.run();
     }
-
     private void run() throws IOException {
         List<GroupData> groups = generateGroups(count);
         if (format.equals("csv"))
