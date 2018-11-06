@@ -48,6 +48,7 @@ public class GroupDataGenerator {
         System.out.println("Unrecognized format" + format);
     }
 }
+
     private void saveAsXml(List<GroupData> groups, File file) throws IOException {
         XStream xstream = new XStream();
         xstream.processAnnotations(GroupData.class);
