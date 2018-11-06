@@ -8,8 +8,6 @@ import java.util.Objects;
 @XStreamAlias("kontakt")
 public class KontaktData {
 
-
-
     @XStreamOmitField
     private int id = Integer.MAX_VALUE;
     private String firstname;
