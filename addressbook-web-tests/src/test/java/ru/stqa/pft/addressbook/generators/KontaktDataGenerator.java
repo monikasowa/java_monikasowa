@@ -77,9 +77,10 @@ public class KontaktDataGenerator {
                         .withMail(String.format("mail %s", i)).withHomePhone(String.format("home %s", i))
                         .withMobilePhone(String.format("nobile %s", i)).withWorkPhone(String.format("work %s", i)));
             }
+
             return kontakts;
         }
-        
+
     }
 
 

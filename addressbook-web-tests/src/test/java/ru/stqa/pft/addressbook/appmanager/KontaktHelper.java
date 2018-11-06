@@ -13,6 +13,7 @@ import java.util.List;
 public class KontaktHelper extends BaseHelper {
 
 
+    public Integer count;
     private ObservableBooleanValue cell;
 
 
@@ -27,10 +28,8 @@ public class KontaktHelper extends BaseHelper {
 
     public void fillKontaktForm(KontaktData groupKontakt) {
 
-        //type(By.name("firstname"), groupKontakt.getFirstname());
-        //type(By.name("firstname"), "Kasia");
+
         type(By.name("firstname"), groupKontakt.getFirstName());
-        //wd.findElement(By.name("middlename")).click();
         type(By.name("lastname"), groupKontakt.getLastName());
         type(By.name("company"), "Polska");
         type(By.name("address"), groupKontakt.getAddress());
@@ -57,10 +56,13 @@ public class KontaktHelper extends BaseHelper {
     public void returntoHomePage() {
 
         wd.findElement(By.xpath("//div[@id='nav']//a[.='home']")).click();
-
     }
+    public int count() {
+        return wd.findElements(By.name("selected[]")).size();}
 
     public void deleteSelectedKontakts() {
+
+
         wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
         wd.switchTo().alert().accept();
     }

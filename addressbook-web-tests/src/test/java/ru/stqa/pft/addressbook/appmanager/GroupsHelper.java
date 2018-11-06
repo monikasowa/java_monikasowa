@@ -89,6 +89,7 @@ public class GroupsHelper extends BaseHelper {
 
        return wd.findElements(By.name("selected[]")).size();}
 
+
     public boolean isThereAGroup() {
         return isElementPresent(By.name("selected[]"));
     }

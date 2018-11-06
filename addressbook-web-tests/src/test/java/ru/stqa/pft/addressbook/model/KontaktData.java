@@ -9,6 +9,7 @@ import java.util.Objects;
 public class KontaktData {
 
 
+
     @XStreamOmitField
     private int id = Integer.MAX_VALUE;
     private String firstname;

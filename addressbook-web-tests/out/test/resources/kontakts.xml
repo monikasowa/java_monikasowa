@@ -1,6 +1,5 @@
 <list>
-  <ru.stqa.pft.addressbook.model.KontaktData>
-    <id>2147483647</id>
+  <kontakt>
     <firstname>firstname 0</firstname>
     <lastname>lastname 0</lastname>
     <address>address 0</address>
@@ -8,9 +7,8 @@
     <homePhone>home 0</homePhone>
     <mobilePhone>nobile 0</mobilePhone>
     <workPhone>work 0</workPhone>
-  </ru.stqa.pft.addressbook.model.KontaktData>
-  <ru.stqa.pft.addressbook.model.KontaktData>
-    <id>2147483647</id>
+  </kontakt>
+  <kontakt>
     <firstname>firstname 1</firstname>
     <lastname>lastname 1</lastname>
     <address>address 1</address>
@@ -18,9 +16,8 @@
     <homePhone>home 1</homePhone>
     <mobilePhone>nobile 1</mobilePhone>
     <workPhone>work 1</workPhone>
-  </ru.stqa.pft.addressbook.model.KontaktData>
-  <ru.stqa.pft.addressbook.model.KontaktData>
-    <id>2147483647</id>
+  </kontakt>
+  <kontakt>
     <firstname>firstname 2</firstname>
     <lastname>lastname 2</lastname>
     <address>address 2</address>
@@ -28,5 +25,5 @@
     <homePhone>home 2</homePhone>
     <mobilePhone>nobile 2</mobilePhone>
     <workPhone>work 2</workPhone>
-  </ru.stqa.pft.addressbook.model.KontaktData>
+  </kontakt>
 </list>
