@@ -48,7 +48,6 @@ public class GroupDataGenerator {
         System.out.println("Unrecognized format" + format);
     }
 }
-
     private void saveAsXml(List<GroupData> groups, File file) throws IOException {
         XStream xstream = new XStream();
         xstream.processAnnotations(GroupData.class);
@@ -63,7 +62,7 @@ public class GroupDataGenerator {
         System.out.println(new File(".").getAbsolutePath());
         Writer writer = new FileWriter(file);
         for (GroupData group : groups) {
-            writer.write(String.format("%s;%s;%s\n", group.getName(),group.getHeader(), group.getFooter()));
+            writer.write(String.format("%s;%s;%s\n", group.getName(),group.getHeader(),group.getFooter()));
         }
         writer.close();
     }
