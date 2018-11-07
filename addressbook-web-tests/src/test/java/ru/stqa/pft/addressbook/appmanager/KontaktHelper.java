@@ -34,6 +34,8 @@ public class KontaktHelper extends BaseHelper {
         type(By.name("company"), "Polska");
         type(By.name("address"), groupKontakt.getAddress());
         type(By.name("email"), groupKontakt.getMail());
+        type(By.name("email1"), groupKontakt.getMail2());
+        type(By.name("email2"), groupKontakt.getMail3());
         type(By.name("home"), groupKontakt.getHomePhone());
         type(By.name("mobile"), groupKontakt.getMobilePhone());
         type(By.name("work"), groupKontakt.getWorkPhone());
@@ -133,11 +135,11 @@ public class KontaktHelper extends BaseHelper {
             String lastname = cells.get(1).getText();
             String firstname = cells.get(2).getText();
             String address = cells.get(3).getText();
-            String mail = cells.get(4).getText();
+            String allMails = cells.get(4).getText();
             String allPhones = cells.get(5).getText();
 
             kontakts.add(new KontaktData().withId(id).withFirstname(firstname).withLastname(lastname)
-                    .withAddress(address).withMail(mail)
+                    .withAddress(address).withAllMails(allMails)
                     .withAllPhones(allPhones));
         }
         return kontakts;
@@ -147,6 +149,8 @@ public class KontaktHelper extends BaseHelper {
         String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
         String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
         String mail = wd.findElement(By.name("email")).getAttribute("value");
+        String mail2 = wd.findElement(By.name("email2")).getAttribute("value");
+        String mail3 = wd.findElement(By.name("email3")).getAttribute("value");
         String address = wd.findElement(By.name("address")).getAttribute("value");
         String home = wd.findElement(By.name("home")).getAttribute("value");
         String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
@@ -155,12 +159,13 @@ public class KontaktHelper extends BaseHelper {
         wd.navigate().back();
         return new KontaktData().withId(kontakt.getId()).withFirstname(firstname)
                 .withLastname(lastname).withHomePhone(home).withMobilePhone(mobile)
-                .withWorkPhone(work).withAddress(address).withMail(mail);
+                .withWorkPhone(work).withAddress(address).withMail(mail).withMail2(mail2).withMail3(mail3);
 
     }
     public KontaktData infoFromDetailsForm(KontaktData kontakt) {
         initKontaktDetailsById(kontakt.getId());
        String details = wd.findElement(By.xpath("//div[@id='content']")).getAttribute("value");
+        String details1 = wd.findElement(By.xpath("//div[@id='content']")).getAttribute("value");
 
         /*String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
         String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
@@ -171,9 +176,9 @@ public class KontaktHelper extends BaseHelper {
         String work = wd.findElement(By.name("work")).getAttribute("value");*/
 
         wd.navigate().back();
-        return new KontaktData().withId(kontakt.getId()).withDetails(details)/*withFirstname(firstname)
+        return new KontaktData().withId(kontakt.getId()).withDetails(details).withDetails1(details1);/*withFirstname(firstname)
                 .withLastname(lastname).withHomePhone(home).withMobilePhone(mobile)
-                .withWorkPhone(work).withAddress(address).withMail(mail)*/;
+                .withWorkPhone(work).withAddress(address).withMail(mail)*/
     }
 
     private void initKontaktModificationById(int i) {

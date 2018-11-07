@@ -29,7 +29,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
             KontaktData kontaktInfoFromDetailsForm = app.kontakt().infoFromDetailsForm(kontakt);
 
             assertThat(kontakt.getDetails(), equalTo(kontaktInfoFromDetailsForm.getDetails()));
+        }
+        @Test
+        public void testKontaktDetails1() {
+            app.goTo().goHome();
+            KontaktData kontakt = app.kontakt().all().iterator().next();
+            KontaktData kontaktInfoFromDetailsForm = app.kontakt().infoFromDetailsForm(kontakt);
 
+            assertThat(kontakt.getDetails1(), equalTo(kontaktInfoFromDetailsForm.getDetails1()));
         }
     }
 
