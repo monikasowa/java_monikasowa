@@ -13,7 +13,6 @@ dependencies {
     compile 'com.google.code.gson:gson:2.8.5'
     compile 'com.beust:jcommander:1.72'
     compile 'com.thoughtworks.xstream:xstream:1.4.11.1'
-
 }
 task testGroups(type:Test) {
     useTestNG {
@@ -26,6 +25,7 @@ task testGroups(type:Test) {
         systemProperty 'target', "${target}"
     }
 }
+
 
 task testKontakts(type:Test) {
     useTestNG {
