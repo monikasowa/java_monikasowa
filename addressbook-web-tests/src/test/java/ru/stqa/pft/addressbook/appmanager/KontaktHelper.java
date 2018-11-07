@@ -45,6 +45,7 @@ public class KontaktHelper extends BaseHelper {
 
 
     public void initKontaktCreation() {
+        //wd.findElement(By.linkText("add new")).click();
         click(By.linkText("add new"));
     }
 
@@ -155,6 +156,7 @@ public class KontaktHelper extends BaseHelper {
         return new KontaktData().withId(kontakt.getId()).withFirstname(firstname)
                 .withLastname(lastname).withHomePhone(home).withMobilePhone(mobile)
                 .withWorkPhone(work).withAddress(address).withMail(mail);
+
     }
     public KontaktData infoFromDetailsForm(KontaktData kontakt) {
         initKontaktDetailsById(kontakt.getId());
