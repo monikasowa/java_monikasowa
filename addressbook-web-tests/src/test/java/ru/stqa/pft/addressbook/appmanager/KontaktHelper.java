@@ -60,8 +60,10 @@ public class KontaktHelper extends BaseHelper {
 
         wd.findElement(By.xpath("//div[@id='nav']//a[.='home']")).click();
     }
+
     public int count() {
-        return wd.findElements(By.name("selected[]")).size();}
+        return wd.findElements(By.name("selected[]")).size();
+    }
 
     public void deleteSelectedKontakts() {
 
@@ -118,15 +120,15 @@ public class KontaktHelper extends BaseHelper {
         wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
-    public void submitKontaktModification () {
+    public void submitKontaktModification() {
         click(By.name("update"));
     }
 
-    public void initKontaktModification ( int i){
+    public void initKontaktModification(int i) {
         click(By.xpath("//a[@href='edit.php?id=" + i + "']"));
     }
 
-    public Kontakts all () {
+    public Kontakts all() {
         Kontakts kontakts = new Kontakts();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element : elements) {
@@ -144,6 +146,7 @@ public class KontaktHelper extends BaseHelper {
         }
         return kontakts;
     }
+
     public KontaktData infoFromEditForm(KontaktData kontakt) {
         initKontaktModificationById(kontakt.getId());
         String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
@@ -162,29 +165,33 @@ public class KontaktHelper extends BaseHelper {
                 .withWorkPhone(work).withAddress(address).withMail(mail).withMail2(mail2).withMail3(mail3);
 
     }
-    public KontaktData infoFromDetailsForm(KontaktData kontakt) {
-        initKontaktDetailsById(kontakt.getId());
-       String details = wd.findElement(By.xpath("//div[@id='content']")).getAttribute("value");
-        String details1 = wd.findElement(By.xpath("//div[@id='content']")).getAttribute("value");
 
-        /*String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
-        String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+    public KontaktData infoFromDetailsForm(KontaktData kontakt) {
+
+        initKontaktDetailsById(kontakt.getId());
+        String firstname = wd.findElement(By.xpath("//div[@id='content']")).getText();
+        /*String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
         String mail = wd.findElement(By.name("email")).getAttribute("value");
+        String mail2 = wd.findElement(By.name("email2")).getAttribute("value");
+        String mail3 = wd.findElement(By.name("email3")).getAttribute("value");
         String address = wd.findElement(By.name("address")).getAttribute("value");
         String home = wd.findElement(By.name("home")).getAttribute("value");
         String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
         String work = wd.findElement(By.name("work")).getAttribute("value");*/
 
         wd.navigate().back();
-        return new KontaktData().withId(kontakt.getId()).withDetails(details).withDetails1(details1);/*withFirstname(firstname)
-                .withLastname(lastname).withHomePhone(home).withMobilePhone(mobile)
-                .withWorkPhone(work).withAddress(address).withMail(mail)*/
-    }
+        return new KontaktData().withId(kontakt.getId()).withFirstname(firstname);
+               /* .withLastname(lastname).withHomePhone(home).withMobilePhone(mobile)
+                .withWorkPhone(work).withAddress(address).withMail(mail);*/
+        }
+        private void initKontaktModificationById ( int i){
+            click(By.xpath("//a[@href='edit.php?id=" + i + "']"));
+        }
+        // wd.findElement(By.cssSelector(String.format("a[@href='edit.php?id=%s']", id))).click();}
 
-    private void initKontaktModificationById(int i) {
-        click(By.xpath("//a[@href='edit.php?id=" + i + "']"));}
-           // wd.findElement(By.cssSelector(String.format("a[@href='edit.php?id=%s']", id))).click();}
+        private void initKontaktDetailsById ( int i){
+            //wd.findElement(By.xpath("//div[@id='content']")).click();
 
-    private void initKontaktDetailsById(int i) {
         click(By.xpath("//a[@href='view.php?id=" + i + "']")); }
     }
+

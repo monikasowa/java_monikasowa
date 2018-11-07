@@ -34,20 +34,19 @@ public class KontaktPhoneTests extends TestBase {
 
     }
 
-    private String mergePhones(KontaktData kontakt) {
+    public String mergePhones(KontaktData kontakt) {
         return Arrays.asList(kontakt.getHomePhone(), kontakt.getMobilePhone(), kontakt.getWorkPhone())
                 .stream().filter((s) -> !s.equals(""))
                 .map(KontaktPhoneTests::cleaned)
                 .collect(Collectors.joining("\n"));
     }
-
     public static String cleaned(String phone)
     {
         return phone.replaceAll("\\s", "").replaceAll("[-()]", "");
     }
 
 
-    private String mergeMails(KontaktData kontakt) {
+    public String mergeMails(KontaktData kontakt) {
         return Arrays.asList(kontakt.getMail(), kontakt.getMail2(), kontakt.getMail3())
                 .stream().filter((s) -> !s.equals(""))
                 .map(KontaktPhoneTests::cleaned1)

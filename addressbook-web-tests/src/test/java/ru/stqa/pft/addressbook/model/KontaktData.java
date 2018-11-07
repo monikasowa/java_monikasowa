@@ -26,7 +26,7 @@ public class KontaktData {
     private String allPhones;
     private String allMails;
     private String details;
-    private String details1;
+
 
 
 
@@ -34,19 +34,6 @@ public class KontaktData {
         this.details = details;
         return this;
     }
-
-    public KontaktData withDetails1(String details1) {
-        this.details1 = details1;
-        return this;
-    }
-    public String getDetails() {
-        return details;
-    }
-
-    public String getDetails1() {
-        return details1;
-    }
-
     public String getAllPhones() {
         return allPhones;
     }
@@ -186,6 +173,18 @@ public class KontaktData {
     }
 
 
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
 }
 
 
