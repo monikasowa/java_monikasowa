@@ -23,6 +23,9 @@ public class ApplicationManager {
     public KontaktHelper kontaktHelper;
     public NavigationHelper navigationHelper;
     public String browser;
+    private DbHelper dbHelper;
+
+
 
     public ApplicationManager(String browser){
         this.browser = browser;
@@ -34,6 +37,9 @@ public class ApplicationManager {
 
         String target = System.getProperty("target","local");
         properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
+
+        dbHelper = new DbHelper();
+
         if (browser == BrowserType.FIREFOX) {
             wd = new FirefoxDriver();
         } else if (browser == BrowserType.CHROME) {
@@ -48,6 +54,7 @@ public class ApplicationManager {
         sessionHelper = new SessionHelper(wd);
         navigationHelper = new NavigationHelper(wd);
         sessionHelper.Login(properties.getProperty("web.adminLogin"),properties.getProperty("web.adminPassword"));
+        dbHelper = new DbHelper();
     }
 
     public void stop() {
@@ -57,16 +64,13 @@ public class ApplicationManager {
     public GroupsHelper group() {
         return groupsHelper;
     }
-
-    public NavigationHelper goTo(){
-        return navigationHelper;
-
-    }
+    public NavigationHelper goTo(){ return navigationHelper; }
     public KontaktHelper kontakt() {
         return kontaktHelper;
     }
     public NavigationHelper goHome() {
         return navigationHelper;
     }
-
+    public DbHelper db() { return dbHelper;
+    }
 }

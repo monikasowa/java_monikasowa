@@ -15,21 +15,20 @@ public class KontaktDeleteTests extends TestBase
 
     @BeforeMethod
     public void ensurePreconditions() {
-        app.kontakt().goHome();
-        if(app.kontakt().all().size() == 0)
-            app.kontakt().create(new KontaktData().withFirstname("Monika").withLastname("Sowa"));
+        if (app.db().kontakts().size() == 0) {
+            app.goTo().goHome();
+            app.kontakt().create(new KontaktData()
+                    .withFirstname("Monika").withLastname("Sowa"));
+        }
     }
     @Test
-    public void testKontaktDelete()
+    public void testKontaktDelete() {
 
-    {
-        Kontakts before = app.kontakt().all();
+        Kontakts before = app.db().kontakts();
         KontaktData deletedKontakt = before.iterator().next();
-        //KontaktData k = before.get(before.size() - 1);
-        //int id_k = k.getId();
-        //String id_s = Integer.toString(id_k);
+        app.goTo().goHome();
         app.kontakt().delete(deletedKontakt);
-        Kontakts after = app.kontakt().all();
+        Kontakts after = app.db().kontakts();
         assertEquals(after.size(), before.size() - 1);
         assertThat(after, equalTo(before.without(deletedKontakt)));
     }

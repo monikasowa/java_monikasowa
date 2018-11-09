@@ -11,20 +11,21 @@ public class KontaktModificationTests extends TestBase {
 
     @BeforeMethod
     public void ensurePreconditions() {
-        app.kontakt().goHome();
-        if (app.kontakt().all().size() == 0) {
+        if (app.db().kontakts().size() == 0) {
+            app.goTo().goHome();
             app.kontakt().create(new KontaktData()
                     .withFirstname("Monika").withLastname("Sowa"));
         }
     }
     @Test
     public void testKontaktModification() {
-        Kontakts before = app.kontakt().all();
+        Kontakts before = app.db().kontakts();
         KontaktData modifiedKontakt = before.iterator().next();
         KontaktData kontakt = new KontaktData()
                 .withId((modifiedKontakt).getId()).withFirstname("Monika").withLastname("Kot");
+        app.goTo().goHome();
         app.kontakt().modify(kontakt);
-        Kontakts after = app.kontakt().all();
+        Kontakts after = app.db().kontakts();
         assertThat(after.size(),equalTo(before.size()));
         assertThat(after, equalTo(before.without(modifiedKontakt).withAdded(kontakt)));
     }
