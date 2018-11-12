@@ -40,11 +40,6 @@ public class DbHelper {
         return new Groups(result);
     }
 
-
-
-
-
-
     public Kontakts kontakts() {
 
         Session session = sessionFactory.openSession();
