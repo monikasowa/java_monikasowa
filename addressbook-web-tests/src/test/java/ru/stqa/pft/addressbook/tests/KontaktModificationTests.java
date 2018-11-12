@@ -28,8 +28,8 @@ public class KontaktModificationTests extends TestBase {
                 .withId((modifiedKontakt).getId()).withFirstname("Monika").withLastname("Kot");
         app.goTo().goHome();
         app.kontakt().modify(kontakt);
+        //assertThat(app.kontakt().count(),equalTo( before.size()));
         Kontakts after = app.db().kontakts();
-        //assertThat(after.size(), equalTo(before.size()));
         assertThat(after, equalTo(before.without(modifiedKontakt).withAdded(kontakt)));
     }
 }

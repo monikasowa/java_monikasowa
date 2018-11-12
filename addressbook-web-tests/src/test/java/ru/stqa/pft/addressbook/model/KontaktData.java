@@ -204,12 +204,6 @@ public class KontaktData {
     public String getFirstName() { return firstname; }
     public String getAddress() { return address; }
     public String getMail() { return mail; }
-    public String getHomePhone() { return homePhone; }
-    public String getMobilePhone() { return mobilePhone; }
-    public String getWorkPhone() { return workPhone; }
-    public String getLastName() { return lastname; }
-    public String getMail2() { return mail2; }
-    public String getMail3() { return mail3; }
 
     @Override
     public String toString() {
@@ -217,8 +211,22 @@ public class KontaktData {
                 "id=" + id +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
+                ", address='" + address + '\'' +
+                ", mail='" + mail + '\'' +
+                ", mail2='" + mail2 + '\'' +
+                ", mail3='" + mail3 + '\'' +
+                ", homePhone='" + homePhone + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                ", workPhone='" + workPhone + '\'' +
                 '}';
     }
+
+    public String getHomePhone() { return homePhone; }
+    public String getMobilePhone() { return mobilePhone; }
+    public String getWorkPhone() { return workPhone; }
+    public String getLastName() { return lastname; }
+    public String getMail2() { return mail2; }
+    public String getMail3() { return mail3; }
 
 
     public void setDetails(String details) {

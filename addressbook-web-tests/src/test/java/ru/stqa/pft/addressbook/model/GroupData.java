@@ -49,14 +49,6 @@ public class GroupData {
                 Objects.equals(footer, groupData.footer);
     }
 
-    @Override
-    public String toString() {
-        return "GroupData{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
 
     public int getId() {
         return id;
@@ -82,9 +74,18 @@ public class GroupData {
     public String getName() {
         return name;
     }
-
     public String getHeader() {
         return header;
+    }
+
+    @Override
+    public String toString() {
+        return "GroupData{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", header='" + header + '\'' +
+                ", footer='" + footer + '\'' +
+                '}';
     }
 
     public String getFooter() {

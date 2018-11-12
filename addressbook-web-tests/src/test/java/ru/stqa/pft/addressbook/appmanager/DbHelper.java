@@ -31,7 +31,7 @@ public class DbHelper {
 
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List<GroupData> result = session.createQuery("from GroupData").list();
+        List<GroupData> result = session.createQuery("from GroupData where deprecated = '0000-00-00'").list();
         session.getTransaction().commit();
         session.close();
         return new Groups(result);
@@ -43,7 +43,7 @@ public class DbHelper {
         // System.out.println("look 2");
         session.beginTransaction();
         // System.out.println("look 3");
-        List <KontaktData> result = session.createQuery("from KontaktData").list();
+        List <KontaktData> result = session.createQuery("from KontaktData where deprecated = '0000-00-00'").list();
         // System.out.println("look 4");
         session.getTransaction().commit();
         // System.out.println("look 5");
