@@ -19,16 +19,19 @@ import static org.testng.Assert.assertEquals;
 
 public class GroupModificationTests extends TestBase {
 
-    @BeforeMethod
+   /* @BeforeMethod
     public void ensurePreconditions() {
         if (app.db().groups().size() == 0) {
             app.goTo().groupPage();
             app.group().create(new GroupData().withName("test4"));
         }
-    }
+        System.out.println("po size");
+    }*/
     @Test
     public void testGroupModification() {
+        System.out.println("10");
         Groups before = app.db().groups();
+        System.out.println("11");
         GroupData modifiedGroup = before.iterator().next();
         GroupData group = new GroupData()
                 .withId((modifiedGroup).getId()).withName("test7").withFooter("test2").withHeader("test3");

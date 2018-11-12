@@ -28,7 +28,7 @@ public class HbConnectionTest {
             sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
         }
         catch (Exception e) {
-            //e.printStackTrace();
+            e.printStackTrace();
             // The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory
             // so destroy it manually.
             StandardServiceRegistryBuilder.destroy(registry);
@@ -37,7 +37,7 @@ public class HbConnectionTest {
     @Test
     public void testHbConnection() {
 
-       /* Session session = sessionFactory.openSession();
+       Session session = sessionFactory.openSession();
         session.beginTransaction();
         List result = session.createQuery("from GroupData").list();
         for (GroupData group:(List<GroupData>)result) {
@@ -45,8 +45,8 @@ public class HbConnectionTest {
         }
         session.getTransaction().commit();
         session.close();
-    }*/
-        Session session = sessionFactory.openSession();
+    }
+       /* Session session = sessionFactory.openSession();
         session.beginTransaction();
         List result = session.createQuery("from KontaktData where deprecated = '0000-00-00'").list();
         for (KontaktData kontakt:(List<KontaktData>)result)
@@ -55,5 +55,5 @@ public class HbConnectionTest {
         }
         session.getTransaction().commit();
         session.close();
-    }
+    }*/
 }

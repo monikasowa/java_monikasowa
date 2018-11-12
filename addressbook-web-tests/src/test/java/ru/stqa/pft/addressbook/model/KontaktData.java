@@ -26,6 +26,7 @@ public class KontaktData {
     private String company;
 
     @Column(name = "address")
+    @Type(type = "text")
     private String address;
 
     @Column(name = "email")

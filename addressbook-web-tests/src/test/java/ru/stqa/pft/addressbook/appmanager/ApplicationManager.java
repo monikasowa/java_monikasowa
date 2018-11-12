@@ -48,7 +48,8 @@ public class ApplicationManager {
             wd = new InternetExplorerDriver();
         }
         wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        wd.get(properties.getProperty("web.baseUrl"));
+       // wd.get("http://localhost/addressbook/");
+        wd.get(properties.getProperty("web.baseUrlweb"));
         groupsHelper = new GroupsHelper(wd);
         kontaktHelper = new KontaktHelper(wd);
         sessionHelper = new SessionHelper(wd);
