@@ -1,5 +1,6 @@
 package ru.stqa.pft.addressbook.tests;
 
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
@@ -27,7 +28,7 @@ public class HbConnectionTest {
             sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
         }
         catch (Exception e) {
-           //e.printStackTrace();
+            //e.printStackTrace();
             // The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory
             // so destroy it manually.
             StandardServiceRegistryBuilder.destroy(registry);
@@ -45,13 +46,14 @@ public class HbConnectionTest {
         session.getTransaction().commit();
         session.close();
     }*/
-   Session session = sessionFactory.openSession();
+        Session session = sessionFactory.openSession();
         session.beginTransaction();
-    List result = session.createQuery("from KontaktData where deprecated = '0000-00-00'").list();
-        for (KontaktData kontakt:(List<KontaktData>)result) {
-        System.out.println(kontakt);
-    }
+        List result = session.createQuery("from KontaktData where deprecated = '0000-00-00'").list();
+        for (KontaktData kontakt:(List<KontaktData>)result)
+        {
+            System.out.println(kontakt);
+        }
         session.getTransaction().commit();
         session.close();
-}
+    }
 }
