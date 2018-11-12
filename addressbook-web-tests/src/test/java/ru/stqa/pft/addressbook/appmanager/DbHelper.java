@@ -28,24 +28,25 @@ public class DbHelper {
 
     public Groups groups() {
 
-       // System.out.println("wejscie do groups");
+
         Session session = sessionFactory.openSession();
-       // System.out.println("pobranie do groups");
         session.beginTransaction();
-       // System.out.println("look groups");
         List<GroupData> result = session.createQuery("from GroupData").list();
-      //  System.out.println("duck do groups");
         session.getTransaction().commit();
         session.close();
         return new Groups(result);
     }
 
     public Kontakts kontakts() {
-
+// System.out.println("look 1");
         Session session = sessionFactory.openSession();
+        // System.out.println("look 2");
         session.beginTransaction();
+        // System.out.println("look 3");
         List <KontaktData> result = session.createQuery("from KontaktData").list();
+        // System.out.println("look 4");
         session.getTransaction().commit();
+        // System.out.println("look 5");
         session.close();
         return new Kontakts(result);
     }

@@ -14,7 +14,7 @@ public class NavigationHelper extends BaseHelper {
                     && isElementPresent(By.tagName("new"))) {
                 return;
             }
-            //click(By.linkText("groups"));
+
         wd.findElement(By.linkText("groups")).click();
         }
 
