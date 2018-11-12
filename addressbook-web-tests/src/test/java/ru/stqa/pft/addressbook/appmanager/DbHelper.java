@@ -33,7 +33,7 @@ public class DbHelper {
        // System.out.println("pobranie do groups");
         session.beginTransaction();
        // System.out.println("look groups");
-        List<GroupData> result = session.createQuery("from GrouptData").list();
+        List<GroupData> result = session.createQuery("from GroupData").list();
       //  System.out.println("duck do groups");
         session.getTransaction().commit();
         session.close();
