@@ -37,6 +37,7 @@ public class KontaktData {
     @Type(type = "text")
     private String mail2;
 
+
     @Column(name = "email3")
     @Type(type = "text")
     private String mail3;

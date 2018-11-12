@@ -18,6 +18,7 @@ public class KontaktModificationTests extends TestBase {
         }
     }
     @Test
+
     public void testKontaktModification() {
         Kontakts before = app.db().kontakts();
         KontaktData modifiedKontakt = before.iterator().next();

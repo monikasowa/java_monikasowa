@@ -22,6 +22,7 @@ public class GroupData {
     private int id = Integer.MIN_VALUE;
 
 
+
     @Column(name = "group_name")
     private String name;
 
