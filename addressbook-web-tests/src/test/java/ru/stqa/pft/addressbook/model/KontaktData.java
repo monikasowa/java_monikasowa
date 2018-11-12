@@ -23,6 +23,7 @@ public class KontaktData {
     @Column(name = "lastname")
     private String lastname;
 
+    @Transient
     private String company;
 
     @Column(name = "address")
@@ -68,29 +69,6 @@ public class KontaktData {
     private String byear;
     @Transient
     private String details;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        KontaktData that = (KontaktData) o;
-        return id == that.id &&
-                Objects.equals(firstname, that.firstname) &&
-                Objects.equals(lastname, that.lastname) &&
-                Objects.equals(address, that.address) &&
-                Objects.equals(mail, that.mail) &&
-                Objects.equals(mail2, that.mail2) &&
-                Objects.equals(mail3, that.mail3) &&
-                Objects.equals(homePhone, that.homePhone) &&
-                Objects.equals(mobilePhone, that.mobilePhone) &&
-                Objects.equals(workPhone, that.workPhone);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, firstname, lastname, address, mail, mail2, mail3, homePhone, mobilePhone, workPhone);
-    }
-
 
 
     public KontaktData withDetails(String details) {
@@ -204,6 +182,12 @@ public class KontaktData {
     public String getFirstName() { return firstname; }
     public String getAddress() { return address; }
     public String getMail() { return mail; }
+    public String getHomePhone() { return homePhone; }
+    public String getMobilePhone() { return mobilePhone; }
+    public String getWorkPhone() { return workPhone; }
+    public String getLastName() { return lastname; }
+    public String getMail2() { return mail2; }
+    public String getMail3() { return mail3; }
 
     @Override
     public String toString() {
@@ -221,12 +205,7 @@ public class KontaktData {
                 '}';
     }
 
-    public String getHomePhone() { return homePhone; }
-    public String getMobilePhone() { return mobilePhone; }
-    public String getWorkPhone() { return workPhone; }
-    public String getLastName() { return lastname; }
-    public String getMail2() { return mail2; }
-    public String getMail3() { return mail3; }
+
 
 
     public void setDetails(String details) {
@@ -240,6 +219,28 @@ public class KontaktData {
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        KontaktData that = (KontaktData) o;
+        return id == that.id &&
+                Objects.equals(firstname, that.firstname) &&
+                Objects.equals(lastname, that.lastname) &&
+                Objects.equals(address, that.address) &&
+                Objects.equals(mail, that.mail) &&
+                Objects.equals(mail2, that.mail2) &&
+                Objects.equals(mail3, that.mail3) &&
+                Objects.equals(homePhone, that.homePhone) &&
+                Objects.equals(mobilePhone, that.mobilePhone) &&
+                Objects.equals(workPhone, that.workPhone);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstname, lastname, address, mail, mail2, mail3, homePhone, mobilePhone, workPhone);
     }
 }
 

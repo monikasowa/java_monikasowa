@@ -21,6 +21,7 @@ public class KontaktDeleteTests extends TestBase
                     .withFirstname("Monika").withLastname("Sowa"));
         }
     }
+
     @Test
     public void testKontaktDelete() {
 

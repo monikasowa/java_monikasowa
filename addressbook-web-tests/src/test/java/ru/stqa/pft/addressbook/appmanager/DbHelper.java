@@ -38,15 +38,11 @@ public class DbHelper {
     }
 
     public Kontakts kontakts() {
-// System.out.println("look 1");
+
         Session session = sessionFactory.openSession();
-        // System.out.println("look 2");
         session.beginTransaction();
-        // System.out.println("look 3");
         List <KontaktData> result = session.createQuery("from KontaktData where deprecated = '0000-00-00'").list();
-        // System.out.println("look 4");
         session.getTransaction().commit();
-        // System.out.println("look 5");
         session.close();
         return new Kontakts(result);
     }

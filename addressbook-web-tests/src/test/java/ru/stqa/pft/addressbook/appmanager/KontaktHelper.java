@@ -34,8 +34,8 @@ public class KontaktHelper extends BaseHelper {
         type(By.name("company"), "Polska");
         type(By.name("address"), groupKontakt.getAddress());
         type(By.name("email"), groupKontakt.getMail());
-        type(By.name("email1"), groupKontakt.getMail2());
-        type(By.name("email2"), groupKontakt.getMail3());
+        type(By.name("email2"), groupKontakt.getMail2());
+        type(By.name("email3"), groupKontakt.getMail3());
         type(By.name("home"), groupKontakt.getHomePhone());
         type(By.name("mobile"), groupKontakt.getMobilePhone());
         type(By.name("work"), groupKontakt.getWorkPhone());
@@ -47,8 +47,8 @@ public class KontaktHelper extends BaseHelper {
 
 
     public void initKontaktCreation() {
-        //wd.findElement(By.linkText("add new")).click();
-        click(By.linkText("add new"));
+        wd.findElement(By.linkText("add new")).click();
+       // click(By.linkText("add new"));
     }
 
     public void submitKontaktCreation() {

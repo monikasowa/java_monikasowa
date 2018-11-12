@@ -24,24 +24,22 @@ public class KontaktCreationTests extends TestBase {
 
     @DataProvider
     public Iterator<Object[]> validKontakts() throws IOException {
-       try(BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/kontakts.xml")))){
-           String xml = "";
-           String line = reader.readLine();
-           while (line != null) {
-               xml += line;
-               line = reader.readLine(); }
-           XStream xstream = new XStream();
-           xstream.processAnnotations(KontaktData.class);
-           List<KontaktData> kontakts = (List<KontaktData>) xstream.fromXML(xml);
-
-           return kontakts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
-       }
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/kontakts.xml")))) {
+            String xml = "";
+            String line = reader.readLine();
+            while (line != null) {
+                xml += line;
+                line = reader.readLine();
+            }
+            XStream xstream = new XStream();
+            xstream.processAnnotations(KontaktData.class);
+            List<KontaktData> kontakts = (List<KontaktData>) xstream.fromXML(xml);
+            return kontakts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+        }
     }
-
     @Test(dataProvider = "validKontakts")
-    public void testKontaktCreation(KontaktData kontakt)
-    {
-     Kontakts before = app.db().kontakts();
+    public void testKontaktCreation(KontaktData kontakt) {
+        Kontakts before = app.db().kontakts();
         app.goTo().goHome();
         app.kontakt().create(kontakt);
         assertThat(app.kontakt().count(), equalTo(before.size() + 1));
@@ -50,3 +48,5 @@ public class KontaktCreationTests extends TestBase {
                 kontakt.withId(after.stream().mapToInt((g) -> g.getId()).max().getAsInt()))));
     }
 }
+
+
