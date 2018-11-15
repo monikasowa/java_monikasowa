@@ -19,6 +19,8 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class GroupCreationTests extends TestBase {
 
+
+
     @DataProvider
     public Iterator<Object[]> validGroups() throws IOException {
          try(BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/groups.xml")))) {
