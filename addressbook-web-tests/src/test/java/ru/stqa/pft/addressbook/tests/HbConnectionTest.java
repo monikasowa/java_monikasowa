@@ -24,7 +24,7 @@ public class HbConnectionTest {
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .configure() // configures settings from hibernate.cfg.xml
                 .build();
-        try {
+       try {
             sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
         }
         catch (Exception e) {
@@ -37,7 +37,7 @@ public class HbConnectionTest {
     @Test
     public void testHbConnection() {
 
-       Session session = sessionFactory.openSession();
+      /* Session session = sessionFactory.openSession();
         session.beginTransaction();
         List result = session.createQuery("from GroupData").list();
         for (GroupData group:(List<GroupData>)result) {
@@ -45,15 +45,17 @@ public class HbConnectionTest {
         }
         session.getTransaction().commit();
         session.close();
-    }
-       /* Session session = sessionFactory.openSession();
+    }*/
+       Session session = sessionFactory.openSession();
         session.beginTransaction();
-        List result = session.createQuery("from KontaktData where deprecated = '0000-00-00'").list();
-        for (KontaktData kontakt:(List<KontaktData>)result)
-        {
-            System.out.println(kontakt);
-        }
+        List <KontaktData>result = session.createQuery("from KontaktData where deprecated = '0000-00-00'").list();
+
         session.getTransaction().commit();
         session.close();
-    }*/
+
+        for (KontaktData kontakt:result) {
+            System.out.println(kontakt);
+            System.out.println(kontakt.getGroups());
+        }
+    }
 }

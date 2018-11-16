@@ -5,6 +5,7 @@ import javafx.beans.value.ObservableBooleanValue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.KontaktData;
 import ru.stqa.pft.addressbook.model.Kontakts;
 
@@ -43,8 +44,8 @@ public class KontaktHelper extends BaseHelper {
         type(By.name("nickname"), "Sowka");
         type(By.name("byear"), "1988");
         //wd.findElement(By.name("submit")).click();
-    }
 
+        }
 
     public void initKontaktCreation() {
         wd.findElement(By.linkText("add new")).click();

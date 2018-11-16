@@ -5,7 +5,9 @@ import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @XStreamAlias("kontakt")
 @Entity
@@ -71,6 +73,16 @@ public class KontaktData {
     private String details;
 
 
+    @ManyToMany(fetch =FetchType.EAGER)
+    @JoinTable(name = "address_in_groups",
+            joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+    private Set<GroupData> groups = new HashSet<GroupData>();
+
+    public Groups getGroups() {
+        return new Groups(groups);
+    }
+
+
     public KontaktData withDetails(String details) {
         this.details = details;
         return this;
@@ -97,6 +109,7 @@ public class KontaktData {
         this.lastname = lastname;
         return this;
     }
+
 
     public void setId(int id) {
         this.id = id;
@@ -131,7 +144,6 @@ public class KontaktData {
         this.mail2 = mail2;
         return this;
     }
-
 
     public void setMail2(String mail2) {
         this.mail2 = mail2;
